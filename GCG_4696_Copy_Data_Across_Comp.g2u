@@ -1,0 +1,2676 @@
+Program.Sub.ScreenSU.Start
+Gui.frmTrans..Create
+Gui.frmTrans..Caption("Copy Specific Records Across Companies")
+Gui.frmTrans..Size(6120,8475)
+Gui.frmTrans..MinX(6405)
+Gui.frmTrans..MinY(8475)
+Gui.frmTrans..Position(0,0)
+Gui.frmTrans..BackColor(-2147483633)
+Gui.frmTrans..MaxButton(False)
+Gui.frmTrans..MousePointer(0)
+Gui.frmTrans..Sizeable(False)
+Gui.frmTrans..Event(UnLoad,frmTrans_UnLoad)
+Gui.frmTrans.picGSSLogo.Create(PictureBox)
+Gui.frmTrans.picGSSLogo.Size(4125,960)
+Gui.frmTrans.picGSSLogo.Position(1665,45)
+Gui.frmTrans.lblFrom.Create(Label,"From:",True,645,255,0,195,165,True,0,"Arial",10,-2147483633,0)
+Gui.frmTrans.lblCCC.Create(Label,"CoCode",True,825,255,0,810,165,True,0,"Arial",10,-2147483633,0)
+Gui.frmTrans.lblTo.Create(Label,"To:",True,600,255,0,195,480,True,0,"Arial",10,-2147483633,0)
+Gui.frmTrans.ddlTo.Create(DropDownList)
+Gui.frmTrans.ddlTo.Size(705,330)
+Gui.frmTrans.ddlTo.Position(810,420)
+Gui.frmTrans.ddlTo.Event(Click,ddlTo_Click)
+Gui.frmTrans.frameInv.Create(Frame)
+Gui.frmTrans.frameInv.Size(5580,780)
+Gui.frmTrans.frameInv.Position(195,1020)
+Gui.frmTrans.frameInv.Caption("Inventory")
+Gui.frmTrans.chkInvRange.Create(CheckBox)
+Gui.frmTrans.chkInvRange.Size(870,255)
+Gui.frmTrans.chkInvRange.Position(1875,390)
+Gui.frmTrans.chkInvRange.Parent("frameInv")
+Gui.frmTrans.chkInvRange.Caption("Range")
+Gui.frmTrans.chkInvRange.Visible(False)
+Gui.frmTrans.cmdInvBrw.Create(Button)
+Gui.frmTrans.cmdInvBrw.Size(375,375)
+Gui.frmTrans.cmdInvBrw.Position(5115,345)
+Gui.frmTrans.cmdInvBrw.Parent("frameInv")
+Gui.frmTrans.cmdInvBrw.Caption("^")
+Gui.frmTrans.cmdInvBrw.Event(Click,cmdInvBrw_Click)
+Gui.frmTrans.optInvCopy.Create(Option)
+Gui.frmTrans.optInvCopy.Size(780,255)
+Gui.frmTrans.optInvCopy.Position(1020,375)
+Gui.frmTrans.optInvCopy.Parent("frameInv")
+Gui.frmTrans.optInvCopy.Caption("Copy")
+Gui.frmTrans.optInvCopy.Visible(False)
+Gui.frmTrans.optInvMove.Create(Option)
+Gui.frmTrans.optInvMove.Size(780,255)
+Gui.frmTrans.optInvMove.Position(195,375)
+Gui.frmTrans.optInvMove.Parent("frameInv")
+Gui.frmTrans.optInvMove.Caption("Move")
+Gui.frmTrans.optInvMove.Visible(False)
+Gui.frmTrans.txtInv.Create(TextBox,"",True,1635,300,0,2400,390,True,0,"Arial",8,-2147483643,1)
+Gui.frmTrans.txtInv.Parent("frameInv")
+Gui.frmTrans.txtInvRev.Create(TextBox,"",True,525,300,0,4095,390,True,0,"Arial",8,-2147483643,1)
+Gui.frmTrans.txtInvRev.Parent("frameInv")
+Gui.frmTrans.lblInv.Create(Label,"Part Number",True,1065,150,0,2400,195,True,0,"Arial",8,-2147483633,0)
+Gui.frmTrans.lblInv.Parent("frameInv")
+Gui.frmTrans.lblInvRev.Create(Label,"Rev",True,390,150,0,4095,195,True,0,"Arial",8,-2147483633,0)
+Gui.frmTrans.lblInvRev.Parent("frameInv")
+Gui.frmTrans.lblInvLoc.Create(Label,"Loc",True,390,150,0,4665,195,True,0,"Arial",8,-2147483633,0)
+Gui.frmTrans.lblInvLoc.Parent("frameInv")
+Gui.frmTrans.txtInvLoc.Create(TextBox,"",True,405,300,0,4680,390,True,0,"Arial",8,-2147483643,1)
+Gui.frmTrans.txtInvLoc.Parent("frameInv")
+Gui.frmTrans.frameRtr.Create(Frame)
+Gui.frmTrans.frameRtr.Size(5580,975)
+Gui.frmTrans.frameRtr.Position(195,1800)
+Gui.frmTrans.frameRtr.Caption("Router")
+Gui.frmTrans.chkRtrRange.Create(CheckBox)
+Gui.frmTrans.chkRtrRange.Size(870,255)
+Gui.frmTrans.chkRtrRange.Position(1875,390)
+Gui.frmTrans.chkRtrRange.Parent("frameRtr")
+Gui.frmTrans.chkRtrRange.Caption("Range")
+Gui.frmTrans.chkRtrRange.Visible(False)
+Gui.frmTrans.cmdRtrBrw.Create(Button)
+Gui.frmTrans.cmdRtrBrw.Size(375,375)
+Gui.frmTrans.cmdRtrBrw.Position(4665,345)
+Gui.frmTrans.cmdRtrBrw.Parent("frameRtr")
+Gui.frmTrans.cmdRtrBrw.Caption("^")
+Gui.frmTrans.cmdRtrBrw.Event(Click,cmdRtrBrw_Click)
+Gui.frmTrans.optRtrCopy.Create(Option)
+Gui.frmTrans.optRtrCopy.Size(780,255)
+Gui.frmTrans.optRtrCopy.Position(1020,375)
+Gui.frmTrans.optRtrCopy.Parent("frameRtr")
+Gui.frmTrans.optRtrCopy.Caption("Copy")
+Gui.frmTrans.optRtrCopy.Visible(False)
+Gui.frmTrans.optRtrMove.Create(Option)
+Gui.frmTrans.optRtrMove.Size(780,255)
+Gui.frmTrans.optRtrMove.Position(195,375)
+Gui.frmTrans.optRtrMove.Parent("frameRtr")
+Gui.frmTrans.optRtrMove.Caption("Move")
+Gui.frmTrans.optRtrMove.Visible(False)
+Gui.frmTrans.txtRtr.Create(TextBox,"",True,1635,300,0,2400,390,True,0,"Arial",8,-2147483643,1)
+Gui.frmTrans.txtRtr.Parent("frameRtr")
+Gui.frmTrans.txtRtrRev.Create(TextBox,"",True,525,300,0,4095,390,True,0,"Arial",8,-2147483643,1)
+Gui.frmTrans.txtRtrRev.Parent("frameRtr")
+Gui.frmTrans.lblRtr.Create(Label,"Router",True,1065,150,0,2400,195,True,0,"Arial",8,-2147483633,0)
+Gui.frmTrans.lblRtr.Parent("frameRtr")
+Gui.frmTrans.lblRtrRev.Create(Label,"Rev",True,390,150,0,4095,195,True,0,"Arial",8,-2147483633,0)
+Gui.frmTrans.lblRtrRev.Parent("frameRtr")
+Gui.frmTrans.lblRtrNote.Create(Label,"**Copies Router and Matching Inventory if it exists",True,4890,150,0,75,780,True,0,"Arial",7,-2147483633,0)
+Gui.frmTrans.lblRtrNote.Parent("frameRtr")
+Gui.frmTrans.frameBOM.Create(Frame)
+Gui.frmTrans.frameBOM.Size(5580,975)
+Gui.frmTrans.frameBOM.Position(195,2775)
+Gui.frmTrans.frameBOM.Caption("Bill of Material")
+Gui.frmTrans.chkBOMRange.Create(CheckBox)
+Gui.frmTrans.chkBOMRange.Size(870,255)
+Gui.frmTrans.chkBOMRange.Position(1875,390)
+Gui.frmTrans.chkBOMRange.Parent("frameBOM")
+Gui.frmTrans.chkBOMRange.Caption("Range")
+Gui.frmTrans.chkBOMRange.Visible(False)
+Gui.frmTrans.cmdBOMBrw.Create(Button)
+Gui.frmTrans.cmdBOMBrw.Size(375,375)
+Gui.frmTrans.cmdBOMBrw.Position(4665,345)
+Gui.frmTrans.cmdBOMBrw.Parent("frameBOM")
+Gui.frmTrans.cmdBOMBrw.Caption("^")
+Gui.frmTrans.cmdBOMBrw.Event(Click,cmdBOMBrw_Click)
+Gui.frmTrans.optBOMCopy.Create(Option)
+Gui.frmTrans.optBOMCopy.Size(780,255)
+Gui.frmTrans.optBOMCopy.Position(1020,375)
+Gui.frmTrans.optBOMCopy.Parent("frameBOM")
+Gui.frmTrans.optBOMCopy.Caption("Copy")
+Gui.frmTrans.optBOMCopy.Visible(False)
+Gui.frmTrans.optBOMMove.Create(Option)
+Gui.frmTrans.optBOMMove.Size(780,255)
+Gui.frmTrans.optBOMMove.Position(195,375)
+Gui.frmTrans.optBOMMove.Parent("frameBOM")
+Gui.frmTrans.optBOMMove.Caption("Move")
+Gui.frmTrans.optBOMMove.Visible(False)
+Gui.frmTrans.txtBOM.Create(TextBox,"",True,1635,300,0,2400,390,True,0,"Arial",8,-2147483643,1)
+Gui.frmTrans.txtBOM.Parent("frameBOM")
+Gui.frmTrans.txtBOMRev.Create(TextBox,"",True,525,300,0,4095,390,True,0,"Arial",8,-2147483643,1)
+Gui.frmTrans.txtBOMRev.Parent("frameBOM")
+Gui.frmTrans.lblBOM.Create(Label,"Parent",True,1065,150,0,2400,195,True,0,"Arial",8,-2147483633,0)
+Gui.frmTrans.lblBOM.Parent("frameBOM")
+Gui.frmTrans.lblBOMRev.Create(Label,"Rev",True,390,150,0,4095,195,True,0,"Arial",8,-2147483633,0)
+Gui.frmTrans.lblBOMRev.Parent("frameBOM")
+Gui.frmTrans.lblBOMNote.Create(Label,"**Copies BOMs, Matching Routers, and Matching Inventory if they exists",True,5505,150,0,75,780,True,0,"Arial",7,-2147483633,0)
+Gui.frmTrans.lblBOMNote.Parent("frameBOM")
+Gui.frmTrans.frameWO.Create(Frame)
+Gui.frmTrans.frameWO.Size(5580,780)
+Gui.frmTrans.frameWO.Position(195,3750)
+Gui.frmTrans.frameWO.Caption("Work Order")
+Gui.frmTrans.chkWORange.Create(CheckBox)
+Gui.frmTrans.chkWORange.Size(870,255)
+Gui.frmTrans.chkWORange.Position(1875,390)
+Gui.frmTrans.chkWORange.Parent("frameWO")
+Gui.frmTrans.chkWORange.Caption("Range")
+Gui.frmTrans.chkWORange.Visible(False)
+Gui.frmTrans.cmdWOBrw.Create(Button)
+Gui.frmTrans.cmdWOBrw.Size(375,375)
+Gui.frmTrans.cmdWOBrw.Position(4080,345)
+Gui.frmTrans.cmdWOBrw.Parent("frameWO")
+Gui.frmTrans.cmdWOBrw.Caption("^")
+Gui.frmTrans.cmdWOBrw.Event(Click,cmdWOBrw_Click)
+Gui.frmTrans.optWOCopy.Create(Option)
+Gui.frmTrans.optWOCopy.Size(780,255)
+Gui.frmTrans.optWOCopy.Position(1020,375)
+Gui.frmTrans.optWOCopy.Parent("frameWO")
+Gui.frmTrans.optWOCopy.Caption("Copy")
+Gui.frmTrans.optWOCopy.Visible(False)
+Gui.frmTrans.optWOMove.Create(Option)
+Gui.frmTrans.optWOMove.Size(780,255)
+Gui.frmTrans.optWOMove.Position(195,375)
+Gui.frmTrans.optWOMove.Parent("frameWO")
+Gui.frmTrans.optWOMove.Caption("Move")
+Gui.frmTrans.optWOMove.Visible(False)
+Gui.frmTrans.txtWO.Create(TextBox,"",True,1635,300,0,2400,390,True,0,"Arial",8,-2147483643,1)
+Gui.frmTrans.txtWO.Parent("frameWO")
+Gui.frmTrans.lblWO.Create(Label,"Work Order",True,1065,150,0,2400,195,True,0,"Arial",8,-2147483633,0)
+Gui.frmTrans.lblWO.Parent("frameWO")
+Gui.frmTrans.frameSO.Create(Frame)
+Gui.frmTrans.frameSO.Size(5580,780)
+Gui.frmTrans.frameSO.Position(195,4530)
+Gui.frmTrans.frameSO.Caption("Sales Order")
+Gui.frmTrans.chkSORange.Create(CheckBox)
+Gui.frmTrans.chkSORange.Size(870,255)
+Gui.frmTrans.chkSORange.Position(1875,390)
+Gui.frmTrans.chkSORange.Parent("frameSO")
+Gui.frmTrans.chkSORange.Caption("Range")
+Gui.frmTrans.chkSORange.Visible(False)
+Gui.frmTrans.cmdSOBrw.Create(Button)
+Gui.frmTrans.cmdSOBrw.Size(375,375)
+Gui.frmTrans.cmdSOBrw.Position(4080,345)
+Gui.frmTrans.cmdSOBrw.Parent("frameSO")
+Gui.frmTrans.cmdSOBrw.Caption("^")
+Gui.frmTrans.cmdSOBrw.Event(Click,cmdSOBrw_Click)
+Gui.frmTrans.optSOCopy.Create(Option)
+Gui.frmTrans.optSOCopy.Size(780,255)
+Gui.frmTrans.optSOCopy.Position(1020,375)
+Gui.frmTrans.optSOCopy.Parent("frameSO")
+Gui.frmTrans.optSOCopy.Caption("Copy")
+Gui.frmTrans.optSOCopy.Visible(False)
+Gui.frmTrans.optSOMove.Create(Option)
+Gui.frmTrans.optSOMove.Size(780,255)
+Gui.frmTrans.optSOMove.Position(195,375)
+Gui.frmTrans.optSOMove.Parent("frameSO")
+Gui.frmTrans.optSOMove.Caption("Move")
+Gui.frmTrans.optSOMove.Visible(False)
+Gui.frmTrans.txtSO.Create(TextBox,"",True,1635,300,0,2400,390,True,0,"Arial",8,-2147483643,1)
+Gui.frmTrans.txtSO.Parent("frameSO")
+Gui.frmTrans.lblSO.Create(Label,"Sales Order",True,1065,150,0,2400,195,True,0,"Arial",8,-2147483633,0)
+Gui.frmTrans.lblSO.Parent("frameSO")
+Gui.frmTrans.framePO.Create(Frame)
+Gui.frmTrans.framePO.Size(5580,780)
+Gui.frmTrans.framePO.Position(195,5310)
+Gui.frmTrans.framePO.Caption("Purchase Order")
+Gui.frmTrans.chkPORange.Create(CheckBox)
+Gui.frmTrans.chkPORange.Size(870,255)
+Gui.frmTrans.chkPORange.Position(1875,390)
+Gui.frmTrans.chkPORange.Parent("framePO")
+Gui.frmTrans.chkPORange.Caption("Range")
+Gui.frmTrans.chkPORange.Visible(False)
+Gui.frmTrans.cmdPOBrw.Create(Button)
+Gui.frmTrans.cmdPOBrw.Size(375,375)
+Gui.frmTrans.cmdPOBrw.Position(4080,345)
+Gui.frmTrans.cmdPOBrw.Parent("framePO")
+Gui.frmTrans.cmdPOBrw.Caption("^")
+Gui.frmTrans.cmdPOBrw.Event(Click,cmdPOBrw_Click)
+Gui.frmTrans.optPOCopy.Create(Option)
+Gui.frmTrans.optPOCopy.Size(780,255)
+Gui.frmTrans.optPOCopy.Position(1020,375)
+Gui.frmTrans.optPOCopy.Parent("framePO")
+Gui.frmTrans.optPOCopy.Caption("Copy")
+Gui.frmTrans.optPOCopy.Visible(False)
+Gui.frmTrans.optPOMove.Create(Option)
+Gui.frmTrans.optPOMove.Size(780,255)
+Gui.frmTrans.optPOMove.Position(195,375)
+Gui.frmTrans.optPOMove.Parent("framePO")
+Gui.frmTrans.optPOMove.Caption("Move")
+Gui.frmTrans.optPOMove.Visible(False)
+Gui.frmTrans.txtPO.Create(TextBox,"",True,1635,300,0,2400,390,True,0,"Arial",8,-2147483643,1)
+Gui.frmTrans.txtPO.Parent("framePO")
+Gui.frmTrans.lblPO.Create(Label,"Purchase Order",True,1065,150,0,2400,195,True,0,"Arial",8,-2147483633,0)
+Gui.frmTrans.lblPO.Parent("framePO")
+Gui.frmTrans.frameCust.Create(Frame)
+Gui.frmTrans.frameCust.Size(5580,780)
+Gui.frmTrans.frameCust.Position(195,6090)
+Gui.frmTrans.frameCust.Caption("Customer")
+Gui.frmTrans.chkCustRange.Create(CheckBox)
+Gui.frmTrans.chkCustRange.Size(870,255)
+Gui.frmTrans.chkCustRange.Position(1875,390)
+Gui.frmTrans.chkCustRange.Parent("frameCust")
+Gui.frmTrans.chkCustRange.Caption("Range")
+Gui.frmTrans.chkCustRange.Visible(False)
+Gui.frmTrans.cmdCustBrw.Create(Button)
+Gui.frmTrans.cmdCustBrw.Size(375,375)
+Gui.frmTrans.cmdCustBrw.Position(4080,345)
+Gui.frmTrans.cmdCustBrw.Parent("frameCust")
+Gui.frmTrans.cmdCustBrw.Caption("^")
+Gui.frmTrans.cmdCustBrw.Event(Click,cmdCustBrw_Click)
+Gui.frmTrans.optCustCopy.Create(Option)
+Gui.frmTrans.optCustCopy.Size(780,255)
+Gui.frmTrans.optCustCopy.Position(1020,375)
+Gui.frmTrans.optCustCopy.Parent("frameCust")
+Gui.frmTrans.optCustCopy.Caption("Copy")
+Gui.frmTrans.optCustCopy.Visible(False)
+Gui.frmTrans.optCustMove.Create(Option)
+Gui.frmTrans.optCustMove.Size(780,255)
+Gui.frmTrans.optCustMove.Position(195,375)
+Gui.frmTrans.optCustMove.Parent("frameCust")
+Gui.frmTrans.optCustMove.Caption("Move")
+Gui.frmTrans.optCustMove.Visible(False)
+Gui.frmTrans.txtCust.Create(TextBox,"",True,1635,300,0,2400,390,True,0,"Arial",8,-2147483643,1)
+Gui.frmTrans.txtCust.Parent("frameCust")
+Gui.frmTrans.lblCust.Create(Label,"Customer",True,1065,150,0,2400,195,True,0,"Arial",8,-2147483633,0)
+Gui.frmTrans.lblCust.Parent("frameCust")
+Gui.frmTrans.frameVend.Create(Frame)
+Gui.frmTrans.frameVend.Size(5580,780)
+Gui.frmTrans.frameVend.Position(195,6870)
+Gui.frmTrans.frameVend.Caption("Vendor")
+Gui.frmTrans.chkVendRange.Create(CheckBox)
+Gui.frmTrans.chkVendRange.Size(870,255)
+Gui.frmTrans.chkVendRange.Position(1875,390)
+Gui.frmTrans.chkVendRange.Parent("frameVend")
+Gui.frmTrans.chkVendRange.Caption("Range")
+Gui.frmTrans.chkVendRange.Visible(False)
+Gui.frmTrans.cmdVendBrw.Create(Button)
+Gui.frmTrans.cmdVendBrw.Size(375,375)
+Gui.frmTrans.cmdVendBrw.Position(4080,345)
+Gui.frmTrans.cmdVendBrw.Parent("frameVend")
+Gui.frmTrans.cmdVendBrw.Caption("^")
+Gui.frmTrans.cmdVendBrw.Event(Click,cmdVendBrw_Click)
+Gui.frmTrans.optVendCopy.Create(Option)
+Gui.frmTrans.optVendCopy.Size(780,255)
+Gui.frmTrans.optVendCopy.Position(1020,375)
+Gui.frmTrans.optVendCopy.Parent("frameVend")
+Gui.frmTrans.optVendCopy.Caption("Copy")
+Gui.frmTrans.optVendCopy.Visible(False)
+Gui.frmTrans.optVendMove.Create(Option)
+Gui.frmTrans.optVendMove.Size(780,255)
+Gui.frmTrans.optVendMove.Position(195,375)
+Gui.frmTrans.optVendMove.Parent("frameVend")
+Gui.frmTrans.optVendMove.Caption("Move")
+Gui.frmTrans.optVendMove.Visible(False)
+Gui.frmTrans.txtVend.Create(TextBox,"",True,1635,300,0,2400,390,True,0,"Arial",8,-2147483643,1)
+Gui.frmTrans.txtVend.Parent("frameVend")
+Gui.frmTrans.lblVend.Create(Label,"Vendor",True,1065,150,0,2400,195,True,0,"Arial",8,-2147483633,0)
+Gui.frmTrans.lblVend.Parent("frameVend")
+Gui.frmTrans.cmdRun.Create(Button)
+Gui.frmTrans.cmdRun.Size(855,375)
+Gui.frmTrans.cmdRun.Position(195,7680)
+Gui.frmTrans.cmdRun.Caption("Run")
+Gui.frmTrans.cmdRun.Event(Click,cmdRun_Click)
+Gui.frmTrans.cmdClear.Create(Button)
+Gui.frmTrans.cmdClear.Size(855,375)
+Gui.frmTrans.cmdClear.Position(1125,7680)
+Gui.frmTrans.cmdClear.Caption("Clear")
+Gui.frmTrans.cmdClear.Event(Click,cmdClear_Click)
+Gui.frmTrans.cmdLog.Create(Button)
+Gui.frmTrans.cmdLog.Size(855,375)
+Gui.frmTrans.cmdLog.Position(4875,7680)
+Gui.frmTrans.cmdLog.Caption("Log File")
+Gui.frmTrans.cmdLog.Event(Click,cmdLog_Click)
+Gui.frmTrans.cmdLog.Enabled(False)
+Gui.frmTrans.lblStatus.Create(Label,"Transferring Data....",False,2565,255,0,2160,7740,True,0,"Arial",12,-2147483633,0)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+	V.Global.sFrom.Declare
+	V.Global.sTo.Declare
+	V.Global.sLog.Declare
+	V.Global.sLogFile.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	V.Local.sIcon.Declare
+	V.Local.sGsslogo.Declare
+	V.Local.bExists.Declare
+	
+	'Original project (4350) gave users the option to move or copy data from company to company. 
+	'Modified by FEQ on September 2017 for Timberland Equipment. The project no longer moves data, only copies.
+	
+	F.Intrinsic.String.Build("{0}\GAB\GAS\gss2.ico",V.Caller.PluginsDir,V.Local.sIcon)
+	F.Intrinsic.String.Build("{0}\GAB\GAS\GAB_GSS_Logo_Green_Dash.png",V.Caller.PluginsDir,v.Local.sGsslogo)
+	Gui.frmTrans..Icon(v.Local.sIcon)
+	Gui.frmTrans.picGSSLogo.Picture(v.Local.sGsslogo)
+
+	F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,300)
+	
+	F.Intrinsic.Control.CallSub(SetCopy)
+
+	V.Global.sFrom.Set(V.Caller.CompanyCode)
+	Gui.frmTrans.lblCCC.Caption(V.Caller.CompanyCode)
+	F.Intrinsic.Control.CallSub(loadddlto)
+	F.Intrinsic.String.Build("{0}\GAB_4350_Log.txt",V.Caller.LocalGssTempDir,V.Global.sLogFile)
+	F.Intrinsic.File.Exists(V.Global.sLogFile,V.Local.bExists)
+	F.Intrinsic.Control.If(V.Local.bExists)
+		Gui.frmTrans.cmdLog.Enabled(True)
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.CallSub(disablescreen)
+	Gui.frmTrans..Show
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.LoadDdlTo.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	V.Local.sCCC.Declare
+	V.Local.iCnt.Declare
+
+	Gui.frmTrans.optInvMove.Value(True)
+	Gui.frmTrans.optRtrMove.Value(True)
+	Gui.frmTrans.optBOMMove.Value(True)
+	Gui.frmTrans.optWOMove.Value(True)
+	Gui.frmTrans.optSOMove.Value(True)
+	Gui.frmTrans.optPOMove.Value(True)
+	Gui.frmTrans.optCustMove.Value(True)
+	Gui.frmTrans.optVendMove.Value(True)
+
+	F.Global.General.GetCompanyCodes(V.Local.sCCC)
+	F.Intrinsic.String.Split(V.Local.sCCC,"*!*",V.Local.sCCC)
+	F.Intrinsic.Control.If(V.Local.sCCC.UBound,>,0)
+		F.Intrinsic.Control.For(V.Local.iCnt,0,V.Local.sCCC.UBound,1)
+			F.Intrinsic.Control.If(V.Local.sCCC(V.Local.iCnt),=,"***NORETURN***")
+				Gui.frmTrans.ddlTo.AddItem("",V.Local.iCnt)
+			F.Intrinsic.Control.ElseIf(V.Local.sCCC(V.Local.iCnt),<>,V.Caller.CompanyCode)
+				Gui.frmTrans.ddlTo.AddItem(V.Local.sCCC(V.Local.iCnt),V.Local.iCnt)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Next(V.Local.iCnt)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.LoadDdlTo.End
+
+Program.Sub.ddlTo_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	F.Intrinsic.Control.If(V.Screen.frmTrans!ddlTo.Text,<>,"")
+		F.Intrinsic.Control.CallSub(enablescreen)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.CallSub(disablescreen)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.ddlTo_Click.End
+
+Program.Sub.frmTrans_UnLoad.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	F.ODBC.Connection!con.Close
+	F.Intrinsic.Control.End 
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.frmTrans_UnLoad.End
+
+Program.Sub.cmdInvBrw_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	V.Local.sTitles.Declare
+	V.Local.iWidths.Declare
+	V.Local.sSQL.Declare
+	V.Local.sRet.Declare
+
+	F.Intrinsic.String.Split("Part*!*Rev*!*Loc*!*Description","*!*",V.Local.sTitles)
+	F.Intrinsic.String.Split("1000*!*500*!*200*!*1200","*!*",V.Local.iWidths)
+
+	V.Local.sSQL.Set("SELECT DISTINCT SUBSTRING(PART, 1, 17) AS Part, SUBSTRING(PART, 18, 3) AS Rev,LOCATION AS Loc,DESCRIPTION AS Description FROM INVENTORY_MSTR ORDER BY Part,Rev,Loc;")
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	F.Intrinsic.UI.Browser("Select Part:","con",V.Local.sSQL,V.Local.sTitles,V.Local.iWidths,"8000","8000",V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.frmTrans.txtInv.Text(V.Local.sRet(0).Trim)
+		Gui.frmTrans.txtInvRev.Text(V.Local.sRet(1).Trim)
+		Gui.frmTrans.txtInvLoc.Text(V.Local.sRet(2).Trim)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdInvBrw_Click.End
+
+Program.Sub.cmdRtrBrw_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	V.Local.sTitles.Declare
+	V.Local.iWidths.Declare
+	V.Local.sSQL.Declare
+	V.Local.sRet.Declare
+
+	F.Intrinsic.String.Split("Router*!*Rev*!*Description","*!*",V.Local.sTitles)
+	F.Intrinsic.String.Split("1000*!*500*!*1200","*!*",V.Local.iWidths)
+
+	V.Local.sSQL.Set("SELECT SUBSTRING(ROUTER, 1, 17) AS Router, SUBSTRING(ROUTER, 18, 3) AS Rev, DESCRIPTION_ROUTER AS Description FROM V_ROUTER_HEADER ORDER BY Router,Rev;")
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	F.Intrinsic.UI.Browser("Select Router:","con",V.Local.sSQL,V.Local.sTitles,V.Local.iWidths,"8000","8000",V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.frmTrans.txtRtr.Text(V.Local.sRet(0).Trim)
+		Gui.frmTrans.txtRtrRev.Text(V.Local.sRet(1).Trim)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdRtrBrw_Click.End
+
+Program.Sub.cmdBOMBrw_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	V.Local.sTitles.Declare
+	V.Local.iWidths.Declare
+	V.Local.sSQL.Declare
+	V.Local.sRet.Declare
+
+	F.Intrinsic.String.Split("Parent*!*Rev*!*Description","*!*",V.Local.sTitles)
+	F.Intrinsic.String.Split("1000*!*500*!*1200","*!*",V.Local.iWidths)
+
+	V.Local.sSQL.Set("SELECT DISTINCT SUBSTRING(BM.PARENT, 1, 17) AS Parent, SUBSTRING(BM.PARENT, 18, 3) AS Rev, IF(BM.PARENT=BME.PART,BME.DESCRIPTION,IF(BM.PARENT=IM.PART,IM.DESCRIPTION,'Not Available')) AS Description FROM BOM_MSTR BM LEFT OUTER JOIN BOM_ENG BME ON BM.PARENT = BME.PART LEFT OUTER JOIN INVENTORY_MSTR IM ON BM.PARENT = IM.PART WHERE BM.SEQUENCE_BOM = '0000' AND BM.PARENT <> '' ORDER BY Parent,Rev,Description;")
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	F.Intrinsic.UI.Browser("Select Bill of Material:","con",V.Local.sSQL,V.Local.sTitles,V.Local.iWidths,"8000","8000",V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.frmTrans.txtBOM.Text(V.Local.sRet(0).Trim)
+		Gui.frmTrans.txtBOMRev.Text(V.Local.sRet(1).Trim)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdBOMBrw_Click.End
+
+Program.Sub.cmdWOBrw_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	V.Local.sTitles.Declare
+	V.Local.iWidths.Declare
+	V.Local.sSQL.Declare
+	V.Local.sRet.Declare
+	
+	F.Intrinsic.String.Split("Job*!*Suffix*!*Description*!*Part*!*Rev*!*Due Date","*!*",V.Local.sTitles)
+	F.Intrinsic.String.Split("600*!*400*!*1500*!*1000*!*500*!*800","*!*",V.Local.iWidths)
+
+	V.Local.sSQL.Set("SELECT JOB AS Job,SUFFIX AS Suffix,DESCRIPTION AS Description,SUBSTRING(PART,1,17) AS Part,SUBSTRING(PART,18,3) AS Rev,DATE_DUE FROM V_JOB_HEADER WHERE JOB > '' ORDER BY Job,Suffix;")
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	F.Intrinsic.UI.Browser("Select Work Order:","con",V.Local.sSQL,V.Local.sTitles,V.Local.iWidths,"10000","9000",V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet(1).Trim,=,"")
+			Gui.frmTrans.txtWO.Text(V.Local.sRet(0).Trim)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}-{1}",V.Local.sRet(0).Trim,V.Local.sRet(1).Trim,V.Local.sRet)
+			Gui.frmTrans.txtWO.Text(V.Local.sRet)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdWOBrw_Click.End
+
+Program.Sub.cmdSOBrw_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	V.Local.sTitles.Declare
+	V.Local.iWidths.Declare
+	V.Local.sSQL.Declare
+	V.Local.sRet.Declare
+
+	F.Intrinsic.String.Split("Order No*!*Cust No*!*Customer Name*!*Purchase Order*!*Address*!*City*!*State","*!*",V.Local.sTitles)
+	F.Intrinsic.String.Split("600*!*600*!*1800*!*1500*!*1800*!*800*!*400","*!*",V.Local.iWidths)
+
+	V.Local.sSQL.Set("SELECT A.ORDER_NO,A.CUSTOMER,C.NAME_CUSTOMER_SHIP,A.CUSTOMER_PO,C.ADDRESS_1_SHIP,C.CITY_SHIP,C.STATE_SHIP FROM ORDER_HEADER A LEFT OUTER JOIN ORDER_SHIP_TO C ON A.ORDER_NO = C.ORDER_NO AND A.SHIP_ID = C.ORDER_SHIP_ID AND C.RECORD_NO = '  C ' WHERE A.RECORD_NO = '  A ' ORDER BY A.ORDER_NO;")
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	F.Intrinsic.UI.Browser("Select Sales Order:","con",V.Local.sSQL,V.Local.sTitles,V.Local.iWidths,"12000","9000",V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.frmTrans.txtSO.Text(V.Local.sRet(0).Trim)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdSOBrw_Click.End
+
+Program.Sub.cmdPOBrw_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	V.Local.sTitles.Declare
+	V.Local.iWidths.Declare
+	V.Local.sSQL.Declare
+	V.Local.sRet.Declare
+
+	F.Intrinsic.String.Split("PO No*!*Vendor*!*Vendor Name*!*Type","*!*",V.Local.sTitles)
+	F.Intrinsic.String.Split("600*!*500*!*1500*!*800","*!*",V.Local.iWidths)
+
+	V.Local.sSQL.Set("SELECT V_PO_VENDOR_BUY.PURCHASE_ORDER,V_PO_VENDOR_BUY.VENDOR,V_PO_VENDOR_BUY.NAME_VENDOR, IF (PO_HEADER.TYPE = '1', 'Blanket', 'Normal') FROM V_PO_VENDOR_BUY LEFT OUTER JOIN PO_HEADER ON V_PO_VENDOR_BUY.PURCHASE_ORDER = PO_HEADER.PURCHASE_ORDER AND PO_HEADER.RECORD_NO = '  A ' ORDER BY V_PO_VENDOR_BUY.PURCHASE_ORDER;")
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	F.Intrinsic.UI.Browser("Select Purchase Order:","con",V.Local.sSQL,V.Local.sTitles,V.Local.iWidths,"10000","9000",V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.frmTrans.txtPO.Text(V.Local.sRet(0).Trim)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdPOBrw_Click.End
+
+Program.Sub.cmdCustBrw_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	V.Local.sTitles.Declare
+	V.Local.iWidths.Declare
+	V.Local.sSQL.Declare
+	V.Local.sRet.Declare
+
+	F.Intrinsic.String.Split("Customer*!*Name*!*City*!*State","*!*",V.Local.sTitles)
+	F.Intrinsic.String.Split("600*!*1500*!*1000*!*500","*!*",V.Local.iWidths)
+
+	V.Local.sSQL.Set("SELECT CUSTOMER_MASTER.CUSTOMER,CUSTOMER_MASTER.NAME_CUSTOMER,CUSTOMER_MASTER.CITY, CUSTOMER_MASTER.STATE FROM CUSTOMER_MASTER WHERE CUSTOMER_MASTER.REC = '1' ORDER BY CUSTOMER_MASTER.CUSTOMER;")
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	F.Intrinsic.UI.Browser("Select Customer:","con",V.Local.sSQL,V.Local.sTitles,V.Local.iWidths,"9000","8000",V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.frmTrans.txtCust.Text(V.Local.sRet(0).Trim)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdCustBrw_Click.End
+
+Program.Sub.cmdVendBrw_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	V.Local.sTitles.Declare
+	V.Local.iWidths.Declare
+	V.Local.sSQL.Declare
+	V.Local.sRet.Declare
+
+	F.Intrinsic.String.Split("Vendor*!*Name*!*City*!*State","*!*",V.Local.sTitles)
+	F.Intrinsic.String.Split("600*!*1500*!*1000*!*500","*!*",V.Local.iWidths)
+
+	V.Local.sSQL.Set("SELECT VENDOR,NAME_VENDOR,CITY,STATE FROM VENDOR_MASTER WHERE VENDOR > ' ' AND REC = 1 ORDER BY VENDOR,NAME_VENDOR;")
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	F.Intrinsic.UI.Browser("Select Vendor:","con",V.Local.sSQL,V.Local.sTitles,V.Local.iWidths,"9000","8000",V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"***CANCEL***")
+		F.Intrinsic.String.Split(V.Local.sRet,"*!*",V.Local.sRet)
+		Gui.frmTrans.txtVend.Text(V.Local.sRet(0).Trim)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdVendBrw_Click.End
+
+Program.Sub.cmdRun_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	V.Local.sDSN.Declare
+	V.Local.sGSSPart.Declare
+
+	F.Intrinsic.Control.If(V.Screen.frmTrans!ddlTo.Text,<>,"")
+		V.Global.sTo.Set(V.Screen.frmTrans!ddlTo.Text)
+		F.Intrinsic.String.Build("{0} - {1} - {2}{3}Transfer From {4} To {5}{3}{3}",V.Caller.User,V.Ambient.Date,V.Ambient.Time,V.Ambient.NewLine,V.Global.sFrom,V.Global.sTo,V.Global.sLog)
+		F.Intrinsic.String.Build("Global_{0}",V.Global.sTo,V.Local.sDSN)
+		F.Global.General.OverrideCompany(V.Global.sTo)
+		F.ODBC.Connection!conx.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass,300)
+		F.Global.General.OverrideCompany(V.Global.sFrom)
+
+		Gui.frmTrans.lblStatus.Visible(True)
+		F.Intrinsic.Control.CallSub(disablescreen)
+
+		'Inventory
+		F.Intrinsic.Control.If(V.Screen.frmTrans!txtInv.Text,<>,"")
+			F.Intrinsic.String.Build("{0}Inventory-------------------------------------------------------------------------------------{1}",V.Global.sLog,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.CallSub(movecopyinv)
+			Gui.frmTrans.txtInv.Text("")
+			Gui.frmTrans.txtInvRev.Text("")
+			Gui.frmTrans.txtInvLoc.Text("")
+		F.Intrinsic.Control.EndIf
+		'Router
+		F.Intrinsic.Control.If(V.Screen.frmTrans!txtRtr.Text,<>,"")
+			F.Intrinsic.String.Build("{0}Router----------------------------------------------------------------------------------------{1}",V.Global.sLog,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.CallSub(movecopyrtr)
+			Gui.frmTrans.txtRtr.Text("")
+			Gui.frmTrans.txtRtrRev.Text("")
+		F.Intrinsic.Control.EndIf
+		'Bill of Material
+		F.Intrinsic.Control.If(V.Screen.frmTrans!txtBOM.Text,<>,"")
+			F.Intrinsic.String.Build("{0}Bill of Material------------------------------------------------------------------------------{1}",V.Global.sLog,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.CallSub(movecopybom)
+			Gui.frmTrans.txtBOM.Text("")
+			Gui.frmTrans.txtBOMRev.Text("")
+		F.Intrinsic.Control.EndIf
+		'Work Order
+		F.Intrinsic.Control.If(V.Screen.frmTrans!txtWO.Text,<>,"")
+			F.Intrinsic.String.Build("{0}Work Order------------------------------------------------------------------------------------{1}",V.Global.sLog,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.CallSub(movecopywo)
+			Gui.frmTrans.txtWO.Text("")
+		F.Intrinsic.Control.EndIf
+		'Sales Order
+		F.Intrinsic.Control.If(V.Screen.frmTrans!txtSO.Text,<>,"")
+			F.Intrinsic.String.Build("{0}Sales Order-----------------------------------------------------------------------------------{1}",V.Global.sLog,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.CallSub(movecopyso)
+			Gui.frmTrans.txtSO.Text("")
+		F.Intrinsic.Control.EndIf
+		'Purchase Order
+		F.Intrinsic.Control.If(V.Screen.frmTrans!txtPO.Text,<>,"")
+			F.Intrinsic.String.Build("{0}Purchase Order--------------------------------------------------------------------------------{1}",V.Global.sLog,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.CallSub(movecopypo)
+			Gui.frmTrans.txtPO.Text("")
+		F.Intrinsic.Control.EndIf
+		'Customer
+		F.Intrinsic.Control.If(V.Screen.frmTrans!txtCust.Text,<>,"")
+			F.Intrinsic.String.Build("{0}Customer--------------------------------------------------------------------------------------{1}",V.Global.sLog,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.CallSub(movecopycust)
+			Gui.frmTrans.txtCust.Text("")
+		F.Intrinsic.Control.EndIf
+		'Vendor
+		F.Intrinsic.Control.If(V.Screen.frmTrans!txtVend.Text,<>,"")
+			F.Intrinsic.String.Build("{0}Vendor----------------------------------------------------------------------------------------{1}",V.Global.sLog,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.CallSub(movecopyvend)
+			Gui.frmTrans.txtVend.Text("")
+		F.Intrinsic.Control.EndIf
+
+		F.ODBC.Connection!conx.Close
+		F.Intrinsic.String.Build("{0}Transfer Complete.",V.Global.sLog,V.Global.sLog)
+		F.Intrinsic.File.String2File(V.Global.sLogFile,V.Global.sLog)
+		Gui.frmTrans.cmdLog.Enabled(True)
+		F.Intrinsic.UI.Msgbox("Transfer Complete. Check Log for more information.","Complete")
+		F.Intrinsic.Control.CallSub(enablescreen)
+		Gui.frmTrans.lblStatus.Visible(False)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.UI.Msgbox("Select a To: Company Code first.","Company Code Check")
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdRun_Click.End
+
+Program.Sub.cmdClear_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	Gui.frmTrans.ddlTo.Text("")
+	Gui.frmTrans.txtInv.Text("")
+	Gui.frmTrans.txtInvRev.Text("")
+	Gui.frmTrans.txtInvLoc.Text("")
+	Gui.frmTrans.txtRtr.Text("")
+	Gui.frmTrans.txtRtrRev.Text("")
+	Gui.frmTrans.txtBOM.Text("")
+	Gui.frmTrans.txtBOMRev.Text("")
+	Gui.frmTrans.txtWO.Text("")
+	Gui.frmTrans.txtSO.Text("")
+	Gui.frmTrans.txtPO.Text("")
+	Gui.frmTrans.txtCust.Text("")
+	Gui.frmTrans.txtVend.Text("")
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdClear_Click.End
+
+Program.Sub.cmdLog_Click.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	V.Local.bExists.Declare
+	V.Local.sMsg.Declare
+
+	F.Intrinsic.File.Exists(V.Global.sLogFile,V.Local.bExists)
+	F.Intrinsic.Control.If(V.Local.bExists)
+		F.Intrinsic.Task.ShellExec(0,"",V.Global.sLogFile,"","",1)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Build("Log File ({0}) is missing.",V.Global.sLogFile,V.Local.sMsg)
+		F.Intrinsic.UI.Msgbox(V.Local.sMsg,"No Log File")
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.cmdLog_Click.End
+
+Program.Sub.MoveCopyInv.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	V.Local.sGSSPart.Declare
+	V.Local.sSQL.Declare
+	V.Local.sSQLInsert.Declare
+	V.Local.sSQLDelete.Declare
+	V.Local.sRet.Declare
+	V.Local.iFrom.Declare
+	V.Local.iTo.Declare
+	V.Local.bArgsExists.Declare
+	V.Local.bMove.Declare
+
+	F.Intrinsic.String.GSSPartString(V.Screen.frmTrans!txtInv.Text,V.Screen.frmTrans!txtInvRev.Text,V.Local.sGSSPart)
+
+	F.Intrinsic.Variable.ArgExists("Move",V.Local.bArgsExists)
+	F.Intrinsic.Control.If(V.Local.bArgsExists)
+		V.Local.bMove.Set(V.Args.Move)
+		V.Local.sGSSPart.Set(V.Args.Part)
+	F.Intrinsic.Control.Else
+		V.Local.bMove.Set(V.Screen.frmTrans!optInvMove.Value)
+	F.Intrinsic.Control.EndIf
+	
+	'Added by FEQ. Not moving any data any longer
+	V.Local.bMove.Set("False")
+	
+	'INVENTORY_MSTR
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM INVENTORY_MSTR WHERE PART = '{0}' AND LOCATION = '{1}';",V.Local.sGSSPart,V.Screen.frmTrans!txtInvLoc.Text,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}INVENTORY_MSTR: Part Number ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}INVENTORY_MSTR: Part Number ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.INVENTORY_MSTR SELECT * FROM GLOBAL{1}.INVENTORY_MSTR WHERE PART = '{2}' AND LOCATION = '{3}';",V.Global.sTo,V.Global.sFrom,V.Local.sGSSPart,V.Screen.frmTrans!txtInvLoc.Text,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+			F.Intrinsic.Control.If(V.Local.bMove)
+				F.Intrinsic.String.Build("{0}INVENTORY_MSTR: Part Number ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+				F.Intrinsic.String.Build("DELETE FROM INVENTORY_MSTR WHERE PART = '{0}' AND LOCATION = '{1}';",V.Local.sGSSPart,V.Screen.frmTrans!txtInvLoc.Text,V.Local.sSQLDelete)
+				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+				F.Intrinsic.String.Build("{0}INVENTORY_MSTR: Part Number ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}INVENTORY_MSTR: Part Number ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'INVENTORY_MST2
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM INVENTORY_MST2 WHERE PART = '{0}' AND LOCATION = '{1}';",V.Local.sGSSPart,V.Screen.frmTrans!txtInvLoc.Text,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}INVENTORY_MST2: Part Number ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}INVENTORY_MST2: Part Number ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.INVENTORY_MST2 SELECT * FROM GLOBAL{1}.INVENTORY_MST2 WHERE PART = '{2}' AND LOCATION = '{3}';",V.Global.sTo,V.Global.sFrom,V.Local.sGSSPart,V.Screen.frmTrans!txtInvLoc.Text,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+			F.Intrinsic.Control.If(V.Local.bMove)
+				F.Intrinsic.String.Build("{0}INVENTORY_MST2: Part Number ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+				F.Intrinsic.String.Build("DELETE FROM INVENTORY_MST2 WHERE PART = '{0}' AND LOCATION = '{1}';",V.Local.sGSSPart,V.Screen.frmTrans!txtInvLoc.Text,V.Local.sSQLDelete)
+				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+				F.Intrinsic.String.Build("{0}INVENTORY_MST2: Part Number ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}INVENTORY_MST2: Part Number ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'INVENTORY_MST3
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM INVENTORY_MST3 WHERE PART = '{0}' AND LOCATION = '{1}';",V.Local.sGSSPart,V.Screen.frmTrans!txtInvLoc.Text,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}INVENTORY_MST3: Part Number ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}INVENTORY_MST3: Part Number ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.INVENTORY_MST3 SELECT * FROM GLOBAL{1}.INVENTORY_MST3 WHERE PART = '{2}' AND LOCATION = '{3}';",V.Global.sTo,V.Global.sFrom,V.Local.sGSSPart,V.Screen.frmTrans!txtInvLoc.Text,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+			F.Intrinsic.Control.If(V.Local.bMove)
+				F.Intrinsic.String.Build("{0}INVENTORY_MST3: Part Number ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+				F.Intrinsic.String.Build("DELETE FROM INVENTORY_MST3 WHERE PART = '{0}' AND LOCATION = '{1}';",V.Local.sGSSPart,V.Screen.frmTrans!txtInvLoc.Text,V.Local.sSQLDelete)
+				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+				F.Intrinsic.String.Build("{0}INVENTORY_MST3: Part Number ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}INVENTORY_MST3: Part Number ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'INVENTORY_COST
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM INVENTORY_COST WHERE PART = '{0}' AND LOCN = '{1}';",V.Local.sGSSPart,V.Screen.frmTrans!txtInvLoc.Text,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}INVENTORY_COST: Part Number ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}INVENTORY_COST: Part Number ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.INVENTORY_COST SELECT * FROM GLOBAL{1}.INVENTORY_COST WHERE PART = '{2}' AND LOCN = '{3}';",V.Global.sTo,V.Global.sFrom,V.Local.sGSSPart,V.Screen.frmTrans!txtInvLoc.Text,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+			F.Intrinsic.Control.If(V.Local.bMove)
+				F.Intrinsic.String.Build("{0}INVENTORY_COST: Part Number ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+				F.Intrinsic.String.Build("DELETE FROM INVENTORY_COST WHERE PART = '{0}' AND LOCN = '{1}';",V.Local.sGSSPart,V.Screen.frmTrans!txtInvLoc.Text,V.Local.sSQLDelete)
+				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+				F.Intrinsic.String.Build("{0}INVENTORY_COST: Part Number ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}INVENTORY_COST: Part Number ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'INV_CROSS_REF
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM INV_CROSS_REF WHERE PART = '{0}' AND LOCATION = '{1}';",V.Local.sGSSPart,V.Screen.frmTrans!txtInvLoc.Text,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}INV_CROSS_REF: Part Number ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}INV_CROSS_REF: Part Number ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.INV_CROSS_REF SELECT * FROM GLOBAL{1}.INV_CROSS_REF WHERE PART = '{2}' AND LOCATION = '{3}';",V.Global.sTo,V.Global.sFrom,V.Local.sGSSPart,V.Screen.frmTrans!txtInvLoc.Text,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+			F.Intrinsic.Control.If(V.Local.bMove)
+				F.Intrinsic.String.Build("{0}INV_CROSS_REF: Part Number ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+				F.Intrinsic.String.Build("DELETE FROM INV_CROSS_REF WHERE PART = '{0}' AND LOCATION = '{1}';",V.Local.sGSSPart,V.Screen.frmTrans!txtInvLoc.Text,V.Local.sSQLDelete)
+				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+				F.Intrinsic.String.Build("{0}INV_CROSS_REF: Part Number ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}INV_CROSS_REF: Part Number ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'ITEM_MASTER
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM ITEM_MASTER WHERE PART = '{0}' AND LOCATION = '{1}';",V.Local.sGSSPart,V.Screen.frmTrans!txtInvLoc.Text,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}ITEM_MASTER: Part Number ({1}) was not found in {2}.{3}{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}ITEM_MASTER: Part Number ({1}) already exist in {2}.{3}{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.ITEM_MASTER SELECT * FROM GLOBAL{1}.ITEM_MASTER WHERE PART = '{2}' AND LOCATION = '{3}';",V.Global.sTo,V.Global.sFrom,V.Local.sGSSPart,V.Screen.frmTrans!txtInvLoc.Text,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+			F.Intrinsic.Control.If(V.Local.bMove)
+				F.Intrinsic.String.Build("{0}ITEM_MASTER: Part Number ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+				F.Intrinsic.String.Build("DELETE FROM ITEM_MASTER WHERE PART = '{0}' AND LOCATION = '{1}';",V.Local.sGSSPart,V.Screen.frmTrans!txtInvLoc.Text,V.Local.sSQLDelete)
+				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+				F.Intrinsic.String.Build("{0}ITEM_MASTER: Part Number ({1}) was Removed From {2}.{3}{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}ITEM_MASTER: Part Number ({1}) was Copied From {2} To {3}.{4}{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.MoveCopyInv.End
+
+Program.Sub.MoveCopyRtr.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	V.Local.sGSSPart.Declare
+	V.Local.sSQL.Declare
+	V.Local.sSQLInsert.Declare
+	V.Local.sSQLDelete.Declare
+	V.Local.sRet.Declare
+	V.Local.iFrom.Declare
+	V.Local.iTo.Declare
+	V.Local.bArgsExists.Declare
+	V.Local.bMove.Declare
+
+	F.Intrinsic.String.GSSPartString(V.Screen.frmTrans!txtRtr.Text,V.Screen.frmTrans!txtRtrRev.Text,V.Local.sGSSPart)
+
+	F.Intrinsic.Variable.ArgExists("Move",V.Local.bArgsExists)
+	F.Intrinsic.Control.If(V.Local.bArgsExists)
+		V.Local.bMove.Set(V.Args.Move)
+		V.Local.sGSSPart.Set(V.Args.Part)
+	F.Intrinsic.Control.Else
+		V.Local.bMove.Set(V.Screen.frmTrans!optRtrMove.Value)
+	F.Intrinsic.Control.EndIf
+	
+	'Added by FEQ. Not moving any data any longer
+	V.Local.bMove.Set("False")
+
+	'ROUTER_HEADER
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM ROUTER_HEADER WHERE ROUTER = '{0}' AND ROUTER_TYPE = 'H';",V.Local.sGSSPart,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}ROUTER_HEADER: Router Number ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}ROUTER_HEADER: Router Number ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.ROUTER_HEADER SELECT * FROM GLOBAL{1}.ROUTER_HEADER WHERE ROUTER = '{2}' AND ROUTER_TYPE = 'H';",V.Global.sTo,V.Global.sFrom,V.Local.sGSSPart,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+			F.Intrinsic.Control.If(V.Local.bMove)
+				F.Intrinsic.String.Build("{0}ROUTER_HEADER: Router Number ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+				F.Intrinsic.String.Build("DELETE FROM ROUTER_HEADER WHERE ROUTER = '{0}' AND ROUTER_TYPE = 'H';",V.Local.sGSSPart,V.Local.sSQLDelete)
+				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+				F.Intrinsic.String.Build("{0}ROUTER_HEADER: Router Number ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}ROUTER_HEADER: Router Number ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'ROUTER_LINE
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM ROUTER_LINE WHERE ROUTER = '{0}' AND ROUTER_TYPE = 'L';",V.Local.sGSSPart,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}ROUTER_LINE: Router Number ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}ROUTER_LINE: Router Number ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.ROUTER_LINE SELECT * FROM GLOBAL{1}.ROUTER_LINE WHERE ROUTER = '{2}' AND ROUTER_TYPE = 'L';",V.Global.sTo,V.Global.sFrom,V.Local.sGSSPart,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+			F.Intrinsic.Control.If(V.Local.bMove)
+				F.Intrinsic.String.Build("{0}ROUTER_LINE: Router Number ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+				F.Intrinsic.String.Build("DELETE FROM ROUTER_LINE WHERE ROUTER = '{0}' AND ROUTER_TYPE = 'L';",V.Local.sGSSPart,V.Local.sSQLDelete)
+				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+				F.Intrinsic.String.Build("{0}ROUTER_LINE: Router Number ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}ROUTER_LINE: Router Number ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'ROUTER_DESC
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM ROUTER_DESC WHERE ROUTER = '{0}' AND ROUTER_TYPE = 'I';",V.Local.sGSSPart,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}ROUTER_DESC: Router Number ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}ROUTER_DESC: Router Number ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.ROUTER_DESC SELECT * FROM GLOBAL{1}.ROUTER_DESC WHERE ROUTER = '{2}' AND ROUTER_TYPE = 'I';",V.Global.sTo,V.Global.sFrom,V.Local.sGSSPart,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+			F.Intrinsic.Control.If(V.Local.bMove)
+				F.Intrinsic.String.Build("{0}ROUTER_DESC: Router Number ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+				F.Intrinsic.String.Build("DELETE FROM ROUTER_DESC WHERE ROUTER = '{0}' AND ROUTER_TYPE = 'I';",V.Local.sGSSPart,V.Local.sSQLDelete)
+				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+				F.Intrinsic.String.Build("{0}ROUTER_DESC: Router Number ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}ROUTER_DESC: Router Number ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'RTR_PRICE_1_4
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM RTR_PRICE_1_4 WHERE ROUTER = '{0}' AND ROUTER_TYPE = 'Q' AND ROUTER_INSERT = '  ';",V.Local.sGSSPart,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}RTR_PRICE_1_4: Router Number ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}RTR_PRICE_1_4: Router Number ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.RTR_PRICE_1_4 SELECT * FROM GLOBAL{1}.RTR_PRICE_1_4 WHERE ROUTER = '{2}' AND ROUTER_TYPE = 'Q' AND ROUTER_INSERT = '  ';",V.Global.sTo,V.Global.sFrom,V.Local.sGSSPart,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+			F.Intrinsic.Control.If(V.Local.bMove)
+				F.Intrinsic.String.Build("{0}RTR_PRICE_1_4: Router Number ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+				F.Intrinsic.String.Build("DELETE FROM RTR_PRICE_1_4 WHERE ROUTER = '{0}' AND ROUTER_TYPE = 'Q' AND ROUTER_INSERT = '  ';",V.Local.sGSSPart,V.Local.sSQLDelete)
+				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+				F.Intrinsic.String.Build("{0}RTR_PRICE_1_4: Router Number ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}RTR_PRICE_1_4: Router Number ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'RTR_PRICE_5_8
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM RTR_PRICE_5_8 WHERE ROUTER = '{0}' AND ROUTER_TYPE = 'Q' AND ROUTER_INSERT = '01';",V.Local.sGSSPart,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}RTR_PRICE_5_8: Router Number ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}RTR_PRICE_5_8: Router Number ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.RTR_PRICE_5_8 SELECT * FROM GLOBAL{1}.RTR_PRICE_5_8 WHERE ROUTER = '{2}' AND ROUTER_TYPE = 'Q' AND ROUTER_INSERT = '01';",V.Global.sTo,V.Global.sFrom,V.Local.sGSSPart,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+			F.Intrinsic.Control.If(V.Local.bMove)
+				F.Intrinsic.String.Build("{0}RTR_PRICE_5_8: Router Number ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+				F.Intrinsic.String.Build("DELETE FROM RTR_PRICE_5_8 WHERE ROUTER = '{0}' AND ROUTER_TYPE = 'Q' AND ROUTER_INSERT = '01';",V.Local.sGSSPart,V.Local.sSQLDelete)
+				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+				F.Intrinsic.String.Build("{0}RTR_PRICE_5_8: Router Number ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}RTR_PRICE_5_8: Router Number ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'RTR_PRICE_9_10
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM RTR_PRICE_9_10 WHERE ROUTER = '{0}' AND ROUTER_TYPE = 'Q' AND ROUTER_INSERT = '02';",V.Local.sGSSPart,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}RTR_PRICE_9_10: Router Number ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}RTR_PRICE_9_10: Router Number ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.RTR_PRICE_9_10 SELECT * FROM GLOBAL{1}.RTR_PRICE_9_10 WHERE ROUTER = '{2}' AND ROUTER_TYPE = 'Q' AND ROUTER_INSERT = '02';",V.Global.sTo,V.Global.sFrom,V.Local.sGSSPart,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+			F.Intrinsic.Control.If(V.Local.bMove)
+				F.Intrinsic.String.Build("{0}RTR_PRICE_9_10: Router Number ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+				F.Intrinsic.String.Build("DELETE FROM RTR_PRICE_9_10 WHERE ROUTER = '{0}' AND ROUTER_TYPE = 'Q' AND ROUTER_INSERT = '02';",V.Local.sGSSPart,V.Local.sSQLDelete)
+				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+				F.Intrinsic.String.Build("{0}RTR_PRICE_9_10: Router Number ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}RTR_PRICE_9_10: Router Number ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'ROUTER_SUPP
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM ROUTER_SUPP WHERE RTR_NUM = '{0}';",V.Local.sGSSPart,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}ROUTER_SUPP: Router Number ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}ROUTER_SUPP: Router Number ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.ROUTER_SUPP SELECT * FROM GLOBAL{1}.ROUTER_SUPP WHERE RTR_NUM = '{2}';",V.Global.sTo,V.Global.sFrom,V.Local.sGSSPart,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+			F.Intrinsic.Control.If(V.Local.bMove)
+				F.Intrinsic.String.Build("{0}ROUTER_SUPP: Router Number ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+				F.Intrinsic.String.Build("DELETE FROM ROUTER_SUPP WHERE RTR_NUM = '{0}';",V.Local.sGSSPart,V.Local.sSQLDelete)
+				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+				F.Intrinsic.String.Build("{0}ROUTER_SUPP: Router Number ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}ROUTER_SUPP: Router Number ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'ROUTER_XREF
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM ROUTER_XREF WHERE ROUTER = '{0}';",V.Local.sGSSPart,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}ROUTER_XREF: Router Number ({1}) was not found in {2}.{3}{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}ROUTER_XREF: Router Number ({1}) already exist in {2}.{3}{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.ROUTER_XREF SELECT * FROM GLOBAL{1}.ROUTER_XREF WHERE ROUTER = '{2}';",V.Global.sTo,V.Global.sFrom,V.Local.sGSSPart,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+			F.Intrinsic.Control.If(V.Local.bMove)
+				F.Intrinsic.String.Build("{0}ROUTER_XREF: Router Number ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+				F.Intrinsic.String.Build("DELETE FROM ROUTER_XREF WHERE ROUTER = '{0}';",V.Local.sGSSPart,V.Local.sSQLDelete)
+				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+				F.Intrinsic.String.Build("{0}ROUTER_XREF: Router Number ({1}) was Removed From {2}.{3}{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}ROUTER_XREF: Router Number ({1}) was Copied From {2} To {3}.{4}{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'Find All M Lines and Loop through them calling MoveCopyInv for each part
+	F.Intrinsic.String.Build("SELECT ROUTER,ROUTER_TYPE,LINE_ROUTER,LMO,PART_WC_OUTSIDE FROM ROUTER_LINE WHERE ROUTER = '{0}' AND ROUTER_TYPE = 'L' AND LMO = 'M' ORDER BY LINE_ROUTER;",V.Local.sGSSPart,V.Local.sSQL)
+	F.ODBC.Connection!con.OpenRecordsetRO("rstRtr",V.Local.sSQL)
+	F.Intrinsic.Control.DoUntil(V.ODBC.con!rstRtr.EOF)
+		F.Intrinsic.Control.CallSub(movecopyinv,"Move",V.Local.bMove,"Part",V.ODBC.con!rstRtr.FieldValTrim!PART_WC_OUTSIDE)
+	F.ODBC.con!rstRtr.MoveNext
+	F.Intrinsic.Control.Loop
+	F.ODBC.con!rstRtr.Close
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.MoveCopyRtr.End
+
+Program.Sub.MoveCopyBOM.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	V.Local.sGSSPart.Declare
+	V.Local.sSQL.Declare
+	V.Local.sSQLInsert.Declare
+	V.Local.sSQLDelete.Declare
+	V.Local.sRet.Declare
+	V.Local.iFrom.Declare
+	V.Local.iTo.Declare
+
+	F.Intrinsic.String.GSSPartString(V.Screen.frmTrans!txtBOM.Text,V.Screen.frmTrans!txtBOMRev.Text,V.Local.sGSSPart)
+
+	'BOM_ENG
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM BOM_ENG WHERE PART = '{0}';",V.Local.sGSSPart,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}BOM_ENG: Parent Number ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}BOM_ENG: Parent Number ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.BOM_ENG SELECT * FROM GLOBAL{1}.BOM_ENG WHERE PART = '{2}';",V.Global.sTo,V.Global.sFrom,V.Local.sGSSPart,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optBOMMove.Value)
+'				F.Intrinsic.String.Build("{0}BOM_ENG: Parent Number ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM BOM_ENG WHERE PART = '{0}';",V.Local.sGSSPart,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}BOM_ENG: Parent Number ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}BOM_ENG: Parent Number ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'BOM_MSTR
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM BOM_MSTR WHERE PARENT = '{0}';",V.Local.sGSSPart,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}BOM_MSTR: Parent Number ({1}) was not found in {2}.{3}{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}BOM_MSTR: Parent Number ({1}) already exist in {2}.{3}{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.BOM_MSTR SELECT * FROM GLOBAL{1}.BOM_MSTR WHERE PARENT = '{2}';",V.Global.sTo,V.Global.sFrom,V.Local.sGSSPart,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optBOMMove.Value)
+'				F.Intrinsic.String.Build("{0}BOM_MSTR: Parent Number ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM BOM_MSTR WHERE PARENT = '{0}';",V.Local.sGSSPart,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}BOM_MSTR: Parent Number ({1}) was Removed From {2}.{3}{3}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}BOM_MSTR: Parent Number ({1}) was Copied From {2} To {3}.{4}{4}",V.Global.sLog,V.Local.sGSSPart.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'Find All M and F Source Codes and Loop through them calling MoveCopyRtr & MoveCopyInv for each part
+	'Then fine all P and J Source Codes and Loop through them calling MoveCopyInv for each part
+	F.Intrinsic.String.Build("SELECT PARENT,SEQUENCE_BOM,PART,SOURCE FROM BOM_MSTR WHERE PARENT = '{0}' AND SEQUENCE_BOM <> '0000' ORDER BY SEQUENCE_BOM;",V.Local.sGSSPart,V.Local.sSQL)
+	F.ODBC.Connection!con.OpenRecordsetRO("rstBom",V.Local.sSQL)
+	F.Intrinsic.Control.DoUntil(V.ODBC.con!rstBom.EOF)
+		F.Intrinsic.Control.SelectCase(V.ODBC.con!rstBom.FieldValTrim!SOURCE)
+			F.Intrinsic.Control.CaseAny("M","F")
+'				F.Intrinsic.Control.CallSub(movecopyrtr,"Move",V.Screen.frmTrans!optBOMMove.Value,"Part",V.ODBC.con!rstBom.FieldValTrim!PART)
+				F.Intrinsic.Control.CallSub(movecopyrtr,"Move","False","Part",V.ODBC.con!rstBom.FieldValTrim!PART)				
+			F.Intrinsic.Control.CaseAny("P","J")
+'				F.Intrinsic.Control.CallSub(movecopyinv,"Move",V.Screen.frmTrans!optBOMMove.Value,"Part",V.ODBC.con!rstBom.FieldValTrim!PART)
+				F.Intrinsic.Control.CallSub(movecopyinv,"Move","False","Part",V.ODBC.con!rstBom.FieldValTrim!PART)
+		F.Intrinsic.Control.EndSelect
+	F.ODBC.con!rstBom.MoveNext
+	F.Intrinsic.Control.Loop
+	F.ODBC.con!rstBom.Close
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.MoveCopyBOM.End
+
+Program.Sub.MoveCopyWO.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	V.Local.sJob.Declare
+	V.Local.sSuffix.Declare
+	V.Local.sSQL.Declare
+	V.Local.sSQLInsert.Declare
+	V.Local.sSQLDelete.Declare
+	V.Local.sRet.Declare
+	V.Local.iFrom.Declare
+	V.Local.iTo.Declare
+
+	F.Intrinsic.String.Split(V.Screen.frmTrans!txtWO.Text,"-",V.Local.sJob)
+	V.Local.sSuffix.Set(V.Local.sJob(1))
+	V.Local.sJob.Set(V.Local.sJob(0))
+
+	F.Intrinsic.Control.If(V.Local.sSuffix,=,"OOB")
+		V.Local.sSuffix.Set("")
+	F.Intrinsic.Control.EndIf
+
+	'JOB_HEADER
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM JOB_HEADER WHERE JOB = '{0}' AND SUFFIX = '{1}';",V.Local.sJob,V.Local.sSuffix,V.Local.sSQL)
+'	Function.Intrinsic.UI.Msgbox(V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}JOB_HEADER: Work Order ({1}) was not found in {2}.{3}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}JOB_HEADER: Work Order ({1}) already exist in {2}.{3}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.JOB_HEADER SELECT * FROM GLOBAL{1}.JOB_HEADER WHERE JOB = '{2}' AND SUFFIX = '{3}';",V.Global.sTo,V.Global.sFrom,V.Local.sJob,V.Local.sSuffix,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optWOMove.Value)
+'				F.Intrinsic.String.Build("{0}JOB_HEADER: Work Order ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM JOB_HEADER WHERE JOB = '{0}' AND SUFFIX = '{1}';",V.Local.sJob,V.Local.sSuffix,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}JOB_HEADER: Work Order ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}JOB_HEADER: Work Order ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'JOB_OPERATIONS
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM JOB_OPERATIONS WHERE JOB = '{0}' AND SUFFIX = '{1}';",V.Local.sJob,V.Local.sSuffix,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}JOB_OPERATIONS: Work Order ({1}) was not found in {2}.{3}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}JOB_OPERATIONS: Work Order ({1}) already exist in {2}.{3}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.JOB_OPERATIONS SELECT * FROM GLOBAL{1}.JOB_OPERATIONS WHERE JOB = '{2}' AND SUFFIX = '{3}';",V.Global.sTo,V.Global.sFrom,V.Local.sJob,V.Local.sSuffix,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optWOMove.Value)
+'				F.Intrinsic.String.Build("{0}JOB_OPERATIONS: Work Order ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM JOB_OPERATIONS WHERE JOB = '{0}' AND SUFFIX = '{1}';",V.Local.sJob,V.Local.sSuffix,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}JOB_OPERATIONS: Work Order ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}JOB_OPERATIONS: Work Order ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'JOB_DETAIL
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM JOB_DETAIL WHERE JOB = '{0}' AND SUFFIX = '{1}';",V.Local.sJob,V.Local.sSuffix,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}JOB_DETAIL: Work Order ({1}) was not found in {2}.{3}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}JOB_DETAIL: Work Order ({1}) already exist in {2}.{3}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.JOB_DETAIL SELECT * FROM GLOBAL{1}.JOB_DETAIL WHERE JOB = '{2}' AND SUFFIX = '{3}';",V.Global.sTo,V.Global.sFrom,V.Local.sJob,V.Local.sSuffix,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optWOMove.Value)
+'				F.Intrinsic.String.Build("{0}JOB_DETAIL: Work Order ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM JOB_DETAIL WHERE JOB = '{0}' AND SUFFIX = '{1}';",V.Local.sJob,V.Local.sSuffix,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}JOB_DETAIL: Work Order ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}JOB_DETAIL: Work Order ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'JOB_COMMITMENTS
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM JOB_COMMITMENTS WHERE JOB = '{0}' AND SUFFIX = '{1}';",V.Local.sJob,V.Local.sSuffix,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}JOB_COMMITMENTS: Work Order ({1}) was not found in {2}.{3}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}JOB_COMMITMENTS: Work Order ({1}) already exist in {2}.{3}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.JOB_COMMITMENTS SELECT * FROM GLOBAL{1}.JOB_COMMITMENTS WHERE JOB = '{2}' AND SUFFIX = '{3}';",V.Global.sTo,V.Global.sFrom,V.Local.sJob,V.Local.sSuffix,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optWOMove.Value)
+'				F.Intrinsic.String.Build("{0}JOB_COMMITMENTS: Work Order ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM JOB_COMMITMENTS WHERE JOB = '{0}' AND SUFFIX = '{1}';",V.Local.sJob,V.Local.sSuffix,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}JOB_COMMITMENTS: Work Order ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}JOB_COMMITMENTS: Work Order ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'JOB_DTL_SUPP
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM JOB_DTL_SUPP WHERE JOB = '{0}' AND SUFFIX = '{1}';",V.Local.sJob,V.Local.sSuffix,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}JOB_DTL_SUPP: Work Order ({1}) was not found in {2}.{3}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}JOB_DTL_SUPP: Work Order ({1}) already exist in {2}.{3}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.JOB_DTL_SUPP SELECT * FROM GLOBAL{1}.JOB_DTL_SUPP WHERE JOB = '{2}' AND SUFFIX = '{3}';",V.Global.sTo,V.Global.sFrom,V.Local.sJob,V.Local.sSuffix,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optWOMove.Value)
+'				F.Intrinsic.String.Build("{0}JOB_DTL_SUPP: Work Order ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM JOB_DTL_SUPP WHERE JOB = '{0}' AND SUFFIX = '{1}';",V.Local.sJob,V.Local.sSuffix,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}JOB_DTL_SUPP: Work Order ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}JOB_DTL_SUPP: Work Order ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'Comments
+	F.Intrinsic.Control.If(V.Caller.GSSVersion,=,2015.3,"OR",V.Caller.GSSVersion,=,2016.1)
+		'MOVE COMMENTS
+	F.Intrinsic.Control.ElseIf(V.Caller.GSSVersion,>=,2016.2)
+		'JOB_DTL_NOTES
+		V.Local.iFrom.Set(0)
+		V.Local.iTo.Set(0)
+		F.Intrinsic.String.Build("SELECT * FROM JOB_DTL_NOTES WHERE JOB = '{0}' AND SUFFIX = '{1}';",V.Local.sJob,V.Local.sSuffix,V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+				F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+		F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+			F.Intrinsic.String.Build("{0}JOB_DTL_NOTES: Work Order ({1}) was not found in {2}.{3}{3}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.If(V.Local.iTo,>,0)
+				F.Intrinsic.String.Build("{0}JOB_DTL_NOTES: Work Order ({1}) already exist in {2}.{3}{3}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.JOB_DTL_NOTES SELECT * FROM GLOBAL{1}.JOB_DTL_NOTES WHERE JOB = '{2}' AND SUFFIX = '{3}';",V.Global.sTo,V.Global.sFrom,V.Local.sJob,V.Local.sSuffix,V.Local.sSQLInsert)
+				F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'				F.Intrinsic.Control.If(V.Screen.frmTrans!optWOMove.Value)
+'					F.Intrinsic.String.Build("{0}JOB_DTL_NOTES: Work Order ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'					F.Intrinsic.String.Build("DELETE FROM JOB_DTL_NOTES WHERE JOB = '{0}' AND SUFFIX = '{1}';",V.Local.sJob,V.Local.sSuffix,V.Local.sSQLDelete)
+'					F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'					F.Intrinsic.String.Build("{0}JOB_DTL_NOTES: Work Order ({1}) was Removed From {2}.{3}{3}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}JOB_DTL_NOTES: Work Order ({1}) was Copied From {2} To {3}.{4}{4}",V.Global.sLog,V.Screen.frmTrans!txtWO.Text,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.MoveCopyWO.End
+
+Program.Sub.MoveCopySO.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	V.Local.sSO.Declare
+	V.Local.sSQL.Declare
+	V.Local.sSQLInsert.Declare
+	V.Local.sSQLDelete.Declare
+	V.Local.sRet.Declare
+	V.Local.iFrom.Declare
+	V.Local.iTo.Declare
+
+	V.Local.sSO.Set(V.Screen.frmTrans!txtSO.Text)
+
+	'ORDER_HEADER
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM ORDER_HEADER WHERE ORDER_NO = '{0}' AND RECORD_TYPE = 'A';",V.Local.sSO,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}ORDER_HEADER: Sales Order ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}ORDER_HEADER: Sales Order ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.ORDER_HEADER SELECT * FROM GLOBAL{1}.ORDER_HEADER WHERE ORDER_NO = '{2}' AND RECORD_TYPE = 'A';",V.Global.sTo,V.Global.sFrom,V.Local.sSO,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optSOMove.Value)
+'				F.Intrinsic.String.Build("{0}ORDER_HEADER: Sales Order ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM ORDER_HEADER WHERE ORDER_NO = '{0}' AND RECORD_TYPE = 'A';",V.Local.sSO,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}ORDER_HEADER: Sales Order ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}ORDER_HEADER: Sales Order ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'ORDER_BILL_TO
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM ORDER_BILL_TO WHERE ORDER_NO = '{0}' AND RECORD_TYPE = 'B';",V.Local.sSO,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}ORDER_BILL_TO: Sales Order ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}ORDER_BILL_TO: Sales Order ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.ORDER_BILL_TO SELECT * FROM GLOBAL{1}.ORDER_BILL_TO WHERE ORDER_NO = '{2}' AND RECORD_TYPE = 'B';",V.Global.sTo,V.Global.sFrom,V.Local.sSO,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optSOMove.Value)
+'				F.Intrinsic.String.Build("{0}ORDER_BILL_TO: Sales Order ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM ORDER_BILL_TO WHERE ORDER_NO = '{0}' AND RECORD_TYPE = 'A';",V.Local.sSO,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}ORDER_BILL_TO: Sales Order ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}ORDER_BILL_TO: Sales Order ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'ORDER_SHIP_TO
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM ORDER_SHIP_TO WHERE ORDER_NO = '{0}' AND RECORD_TYPE = 'C';",V.Local.sSO,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}ORDER_SHIP_TO: Sales Order ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}ORDER_SHIP_TO: Sales Order ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.ORDER_SHIP_TO SELECT * FROM GLOBAL{1}.ORDER_SHIP_TO WHERE ORDER_NO = '{2}' AND RECORD_TYPE = 'C';",V.Global.sTo,V.Global.sFrom,V.Local.sSO,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optSOMove.Value)
+'				F.Intrinsic.String.Build("{0}ORDER_SHIP_TO: Sales Order ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM ORDER_SHIP_TO WHERE ORDER_NO = '{0}' AND RECORD_TYPE = 'A';",V.Local.sSO,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}ORDER_SHIP_TO: Sales Order ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}ORDER_SHIP_TO: Sales Order ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'ORDER_REPAIR
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM ORDER_REPAIR WHERE ORDER_NO = '{0}' AND RECORD_TYPE = 'D';",V.Local.sSO,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}ORDER_REPAIR: Sales Order ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}ORDER_REPAIR: Sales Order ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.ORDER_REPAIR SELECT * FROM GLOBAL{1}.ORDER_REPAIR WHERE ORDER_NO = '{2}' AND RECORD_TYPE = 'D';",V.Global.sTo,V.Global.sFrom,V.Local.sSO,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optSOMove.Value)
+'				F.Intrinsic.String.Build("{0}ORDER_REPAIR: Sales Order ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM ORDER_REPAIR WHERE ORDER_NO = '{0}' AND RECORD_TYPE = 'A';",V.Local.sSO,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}ORDER_REPAIR: Sales Order ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}ORDER_REPAIR: Sales Order ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'ORDER_LINES
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM ORDER_LINES WHERE ORDER_NO = '{0}' AND RECORD_NO > '0000';",V.Local.sSO,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}ORDER_LINES: Sales Order ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}ORDER_LINES: Sales Order ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.ORDER_LINES SELECT * FROM GLOBAL{1}.ORDER_LINES WHERE ORDER_NO = '{2}' AND RECORD_NO > '0000';",V.Global.sTo,V.Global.sFrom,V.Local.sSO,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optSOMove.Value)
+'				F.Intrinsic.String.Build("{0}ORDER_LINES: Sales Order ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM ORDER_LINES WHERE ORDER_NO = '{0}' AND RECORD_NO > '0000';",V.Local.sSO,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}ORDER_LINES: Sales Order ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}ORDER_LINES: Sales Order ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'Comments
+	F.Intrinsic.Control.If(V.Caller.GSSVersion,=,2015.3,"OR",V.Caller.GSSVersion,=,2016.1)
+		'ORDER_TEXT
+		V.Local.iFrom.Set(0)
+		V.Local.iTo.Set(0)
+		F.Intrinsic.String.Build("SELECT * FROM ORDER_TEXT WHERE ORDER_NO = '{0}';",V.Local.sSO,V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+				F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+		F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+			F.Intrinsic.String.Build("{0}ORDER_TEXT: Sales Order ({1}) was not found in {2}.{3}{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.If(V.Local.iTo,>,0)
+				F.Intrinsic.String.Build("{0}ORDER_TEXT: Sales Order ({1}) already exist in {2}.{3}{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.ORDER_TEXT SELECT * FROM GLOBAL{1}.ORDER_TEXT WHERE ORDER_NO = '{2}';",V.Global.sTo,V.Global.sFrom,V.Local.sSO,V.Local.sSQLInsert)
+				F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'				F.Intrinsic.Control.If(V.Screen.frmTrans!optSOMove.Value)
+'					F.Intrinsic.String.Build("{0}ORDER_TEXT: Sales Order ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'					F.Intrinsic.String.Build("DELETE FROM ORDER_TEXT WHERE ORDER_NO = '{0}';",V.Local.sSO,V.Local.sSQLDelete)
+'					F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'					F.Intrinsic.String.Build("{0}ORDER_TEXT: Sales Order ({1}) was Removed From {2}.{3}{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}ORDER_TEXT: Sales Order ({1}) was Copied From {2} To {3}.{4}{4}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.ElseIf(V.Caller.GSSVersion,>=,2016.2)
+		'ORDER_HF_TEXT
+		V.Local.iFrom.Set(0)
+		V.Local.iTo.Set(0)
+		F.Intrinsic.String.Build("SELECT * FROM ORDER_HF_TEXT WHERE ORDER_NUMBER = '{0}';",V.Local.sSO,V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+				F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+		F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+			F.Intrinsic.String.Build("{0}ORDER_HF_TEXT: Sales Order ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.If(V.Local.iTo,>,0)
+				F.Intrinsic.String.Build("{0}ORDER_HF_TEXT: Sales Order ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.ORDER_HF_TEXT SELECT * FROM GLOBAL{1}.ORDER_HF_TEXT WHERE ORDER_NUMBER = '{2}';",V.Global.sTo,V.Global.sFrom,V.Local.sSO,V.Local.sSQLInsert)
+				F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'				F.Intrinsic.Control.If(V.Screen.frmTrans!optSOMove.Value)
+'					F.Intrinsic.String.Build("{0}ORDER_HF_TEXT: Sales Order ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'					F.Intrinsic.String.Build("DELETE FROM ORDER_HF_TEXT WHERE ORDER_NUMBER = '{0}';",V.Local.sSO,V.Local.sSQLDelete)
+'					F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'					F.Intrinsic.String.Build("{0}ORDER_HF_TEXT: Sales Order ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}ORDER_HF_TEXT: Sales Order ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+
+		'ORDER_LN_TEXT
+		V.Local.iFrom.Set(0)
+		V.Local.iTo.Set(0)
+		F.Intrinsic.String.Build("SELECT * FROM ORDER_LN_TEXT WHERE ORDER_NUM = '{0}';",V.Local.sSO,V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+				F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+		F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+			F.Intrinsic.String.Build("{0}ORDER_LN_TEXT: Sales Order ({1}) was not found in {2}.{3}{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.If(V.Local.iTo,>,0)
+				F.Intrinsic.String.Build("{0}ORDER_LN_TEXT: Sales Order ({1}) already exist in {2}.{3}{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.ORDER_LN_TEXT SELECT * FROM GLOBAL{1}.ORDER_LN_TEXT WHERE ORDER_NUM = '{2}';",V.Global.sTo,V.Global.sFrom,V.Local.sSO,V.Local.sSQLInsert)
+				F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'				F.Intrinsic.Control.If(V.Screen.frmTrans!optSOMove.Value)
+'					F.Intrinsic.String.Build("{0}ORDER_LN_TEXT: Sales Order ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'					F.Intrinsic.String.Build("DELETE FROM ORDER_LN_TEXT WHERE ORDER_NUM = '{0}';",V.Local.sSO,V.Local.sSQLDelete)
+'					F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'					F.Intrinsic.String.Build("{0}ORDER_LN_TEXT: Sales Order ({1}) was Removed From {2}.{3}{3}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}ORDER_LN_TEXT: Sales Order ({1}) was Copied From {2} To {3}.{4}{4}",V.Global.sLog,V.Local.sSO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.MoveCopySO.End
+
+Program.Sub.MoveCopyPO.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	V.Local.sPO.Declare
+	V.Local.sSQL.Declare
+	V.Local.sSQLInsert.Declare
+	V.Local.sSQLDelete.Declare
+	V.Local.sRet.Declare
+	V.Local.iFrom.Declare
+	V.Local.iTo.Declare
+
+	V.Local.sPO.Set(V.Screen.frmTrans!txtPO.Text)
+
+	'PO_HEADER
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM PO_HEADER WHERE PURCHASE_ORDER = '{0}' AND RECORD_NO = '  A';",V.Local.sPO,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}PO_HEADER: Purchase Order ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}PO_HEADER: Purchase Order ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.PO_HEADER SELECT * FROM GLOBAL{1}.PO_HEADER WHERE PURCHASE_ORDER = '{2}' AND RECORD_NO = '  A';",V.Global.sTo,V.Global.sFrom,V.Local.sPO,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optPOMove.Value)
+'				F.Intrinsic.String.Build("{0}PO_HEADER: Purchase Order ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM PO_HEADER WHERE PURCHASE_ORDER = '{0}' AND RECORD_NO = '  A';",V.Local.sPO,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}PO_HEADER: Purchase Order ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}PO_HEADER: Purchase Order ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'PO_VENDOR_BUY
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM PO_VENDOR_BUY WHERE PURCHASE_ORDER = '{0}' AND RECORD_NO = '  B';",V.Local.sPO,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}PO_VENDOR_BUY: Purchase Order ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}PO_VENDOR_BUY: Purchase Order ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.PO_VENDOR_BUY SELECT * FROM GLOBAL{1}.PO_VENDOR_BUY WHERE PURCHASE_ORDER = '{2}' AND RECORD_NO = '  B';",V.Global.sTo,V.Global.sFrom,V.Local.sPO,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optPOMove.Value)
+'				F.Intrinsic.String.Build("{0}PO_VENDOR_BUY: Purchase Order ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM PO_VENDOR_BUY WHERE PURCHASE_ORDER = '{0}' AND RECORD_NO = '  B';",V.Local.sPO,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}PO_VENDOR_BUY: Purchase Order ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}PO_VENDOR_BUY: Purchase Order ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'PO_PAY_TO
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM PO_PAY_TO WHERE PURCHASE_ORDER = '{0}' AND RECORD_NO = '  C';",V.Local.sPO,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}PO_PAY_TO: Purchase Order ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}PO_PAY_TO: Purchase Order ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.PO_PAY_TO SELECT * FROM GLOBAL{1}.PO_PAY_TO WHERE PURCHASE_ORDER = '{2}' AND RECORD_NO = '  C';",V.Global.sTo,V.Global.sFrom,V.Local.sPO,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optPOMove.Value)
+'				F.Intrinsic.String.Build("{0}PO_PAY_TO: Purchase Order ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM PO_PAY_TO WHERE PURCHASE_ORDER = '{0}' AND RECORD_NO = '  C';",V.Local.sPO,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}PO_PAY_TO: Purchase Order ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}PO_PAY_TO: Purchase Order ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'PO_LINES
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM PO_LINES WHERE PURCHASE_ORDER = '{0}' AND RECORD_NO > '0000';",V.Local.sPO,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}PO_LINES: Purchase Order ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}PO_LINES: Purchase Order ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.PO_LINES SELECT * FROM GLOBAL{1}.PO_LINES WHERE PURCHASE_ORDER = '{2}' AND RECORD_NO > '0000';",V.Global.sTo,V.Global.sFrom,V.Local.sPO,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optPOMove.Value)
+'				F.Intrinsic.String.Build("{0}PO_LINES: Purchase Order ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM PO_LINES WHERE PURCHASE_ORDER = '{0}' AND RECORD_NO > '0000';",V.Local.sPO,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}PO_LINES: Purchase Order ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}PO_LINES: Purchase Order ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'PO_HISTORY
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM PO_HISTORY WHERE PURCHASE_ORDER = '{0}';",V.Local.sPO,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}PO_HISTORY: Purchase Order ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}PO_HISTORY: Purchase Order ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.PO_HISTORY SELECT * FROM GLOBAL{1}.PO_HISTORY WHERE PURCHASE_ORDER = '{2}';",V.Global.sTo,V.Global.sFrom,V.Local.sPO,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optPOMove.Value)
+'				F.Intrinsic.String.Build("{0}PO_HISTORY: Purchase Order ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM PO_HISTORY WHERE PURCHASE_ORDER = '{0}';",V.Local.sPO,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}PO_HISTORY: Purchase Order ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}PO_HISTORY: Purchase Order ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'Comments
+	F.Intrinsic.Control.If(V.Caller.GSSVersion,=,2015.3,"OR",V.Caller.GSSVersion,=,2016.1)
+		'PO_TEXT
+		V.Local.iFrom.Set(0)
+		V.Local.iTo.Set(0)
+		F.Intrinsic.String.Build("SELECT * FROM PO_TEXT WHERE PURCHASE_ORDER = '{0}';",V.Local.sPO,V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+				F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+		F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+			F.Intrinsic.String.Build("{0}PO_TEXT: Purchase Order ({1}) was not found in {2}.{3}{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.If(V.Local.iTo,>,0)
+				F.Intrinsic.String.Build("{0}PO_TEXT: Purchase Order ({1}) already exist in {2}.{3}{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.PO_TEXT SELECT * FROM GLOBAL{1}.PO_TEXT WHERE PURCHASE_ORDER = '{2}';",V.Global.sTo,V.Global.sFrom,V.Local.sPO,V.Local.sSQLInsert)
+				F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'				F.Intrinsic.Control.If(V.Screen.frmTrans!optPOMove.Value)
+'					F.Intrinsic.String.Build("{0}PO_TEXT: Purchase Order ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'					F.Intrinsic.String.Build("DELETE FROM PO_TEXT WHERE PURCHASE_ORDER = '{0}';",V.Local.sPO,V.Local.sSQLDelete)
+'					F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'					F.Intrinsic.String.Build("{0}PO_TEXT: Purchase Order ({1}) was Removed From {2}.{3}{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}PO_TEXT: Purchase Order ({1}) was Copied From {2} To {3}.{4}{4}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.ElseIf(V.Caller.GSSVersion,>=,2016.2)
+		'PO_HF_TEXT
+		V.Local.iFrom.Set(0)
+		V.Local.iTo.Set(0)
+		F.Intrinsic.String.Build("SELECT * FROM PO_HF_TEXT WHERE PO_NUMBER = '{0}';",V.Local.sPO,V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+				F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+		F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+			F.Intrinsic.String.Build("{0}PO_HF_TEXT: Purchase Order ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.If(V.Local.iTo,>,0)
+				F.Intrinsic.String.Build("{0}PO_HF_TEXT: Purchase Order ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.PO_HF_TEXT SELECT * FROM GLOBAL{1}.PO_HF_TEXT WHERE PO_NUMBER = '{2}';",V.Global.sTo,V.Global.sFrom,V.Local.sPO,V.Local.sSQLInsert)
+				F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'				F.Intrinsic.Control.If(V.Screen.frmTrans!optPOMove.Value)
+'					F.Intrinsic.String.Build("{0}PO_HF_TEXT: Purchase Order ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'					F.Intrinsic.String.Build("DELETE FROM PO_HF_TEXT WHERE PO_NUMBER = '{0}';",V.Local.sPO,V.Local.sSQLDelete)
+'					F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'					F.Intrinsic.String.Build("{0}PO_HF_TEXT: Purchase Order ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}PO_HF_TEXT: Purchase Order ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+
+		'PO_LN_TEXT
+		V.Local.iFrom.Set(0)
+		V.Local.iTo.Set(0)
+		F.Intrinsic.String.Build("SELECT * FROM PO_LN_TEXT WHERE PO_NUM = '{0}';",V.Local.sPO,V.Local.sSQL)
+		F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+			F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+				F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+		F.Intrinsic.Control.EndIf
+
+		F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+			F.Intrinsic.String.Build("{0}PO_LN_TEXT: Purchase Order ({1}) was not found in {2}.{3}{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.Control.If(V.Local.iTo,>,0)
+				F.Intrinsic.String.Build("{0}PO_LN_TEXT: Purchase Order ({1}) already exist in {2}.{3}{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.PO_LN_TEXT SELECT * FROM GLOBAL{1}.PO_LN_TEXT WHERE PO_NUM = '{2}';",V.Global.sTo,V.Global.sFrom,V.Local.sPO,V.Local.sSQLInsert)
+				F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'				F.Intrinsic.Control.If(V.Screen.frmTrans!optPOMove.Value)
+'					F.Intrinsic.String.Build("{0}PO_LN_TEXT: Purchase Order ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'					F.Intrinsic.String.Build("DELETE FROM PO_LN_TEXT WHERE PO_NUM = '{0}';",V.Local.sPO,V.Local.sSQLDelete)
+'					F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'					F.Intrinsic.String.Build("{0}PO_LN_TEXT: Purchase Order ({1}) was Removed From {2}.{3}{3}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}PO_LN_TEXT: Purchase Order ({1}) was Copied From {2} To {3}.{4}{4}",V.Global.sLog,V.Local.sPO.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.MoveCopyPO.End
+
+Program.Sub.MoveCopyCust.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	V.Local.sCust.Declare
+	V.Local.sSQL.Declare
+	V.Local.sSQLInsert.Declare
+	V.Local.sSQLDelete.Declare
+	V.Local.sRet.Declare
+	V.Local.iFrom.Declare
+	V.Local.iTo.Declare
+
+	V.Local.sCust.Set(V.Screen.frmTrans!txtCust.Text)
+
+	'CUSTOMER_MASTER
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM CUSTOMER_MASTER WHERE CUSTOMER = '{0}' AND REC = '1';",V.Local.sCust,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}CUSTOMER_MASTER: Customer ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}CUSTOMER_MASTER: Customer ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.CUSTOMER_MASTER SELECT * FROM GLOBAL{1}.CUSTOMER_MASTER WHERE CUSTOMER = '{2}' AND REC = '1';",V.Global.sTo,V.Global.sFrom,V.Local.sCust,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optCustMove.Value)
+'				F.Intrinsic.String.Build("{0}CUSTOMER_MASTER: Customer ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM CUSTOMER_MASTER WHERE CUSTOMER = '{0}' AND REC = '1';",V.Local.sCust,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}CUSTOMER_MASTER: Customer ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}CUSTOMER_MASTER: Customer ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'CUSTOMER_SALES
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM CUSTOMER_SALES WHERE CUSTOMER = '{0}' AND REC = '2';",V.Local.sCust,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}CUSTOMER_SALES: Customer ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}CUSTOMER_SALES: Customer ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.CUSTOMER_SALES SELECT * FROM GLOBAL{1}.CUSTOMER_SALES WHERE CUSTOMER = '{2}' AND REC = '2';",V.Global.sTo,V.Global.sFrom,V.Local.sCust,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optCustMove.Value)
+'				F.Intrinsic.String.Build("{0}CUSTOMER_SALES: Customer ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM CUSTOMER_SALES WHERE CUSTOMER = '{0}' AND REC = '2';",V.Local.sCust,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}CUSTOMER_SALES: Customer ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}CUSTOMER_SALES: Customer ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'CUSTOMER_SHIPTO
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM CUSTOMER_SHIPTO WHERE CUSTOMER = '{0}' AND REC = '3';",V.Local.sCust,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}CUSTOMER_SHIPTO: Customer ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}CUSTOMER_SHIPTO: Customer ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.CUSTOMER_SHIPTO SELECT * FROM GLOBAL{1}.CUSTOMER_SHIPTO WHERE CUSTOMER = '{2}' AND REC = '3';",V.Global.sTo,V.Global.sFrom,V.Local.sCust,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optCustMove.Value)
+'				F.Intrinsic.String.Build("{0}CUSTOMER_SHIPTO: Customer ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM CUSTOMER_SHIPTO WHERE CUSTOMER = '{0}' AND REC = '3';",V.Local.sCust,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}CUSTOMER_SHIPTO: Customer ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}CUSTOMER_SHIPTO: Customer ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'CUSTOMER_INTL
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM CUSTOMER_INTL WHERE CUSTOMER = '{0}' AND REC = '4';",V.Local.sCust,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}CUSTOMER_INTL: Customer ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}CUSTOMER_INTL: Customer ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.CUSTOMER_INTL SELECT * FROM GLOBAL{1}.CUSTOMER_INTL WHERE CUSTOMER = '{2}' AND REC = '4';",V.Global.sTo,V.Global.sFrom,V.Local.sCust,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optCustMove.Value)
+'				F.Intrinsic.String.Build("{0}CUSTOMER_INTL: Customer ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM CUSTOMER_INTL WHERE CUSTOMER = '{0}' AND REC = '4';",V.Local.sCust,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}CUSTOMER_INTL: Customer ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}CUSTOMER_INTL: Customer ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'CUST_PAYMENT_INFO
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM CUST_PAYMENT_INFO WHERE CUSTOMER = '{0}' AND REC = '5';",V.Local.sCust,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}CUST_PAYMENT_INFO: Customer ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}CUST_PAYMENT_INFO: Customer ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.CUST_PAYMENT_INFO SELECT * FROM GLOBAL{1}.CUST_PAYMENT_INFO WHERE CUSTOMER = '{2}' AND REC = '5';",V.Global.sTo,V.Global.sFrom,V.Local.sCust,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optCustMove.Value)
+'				F.Intrinsic.String.Build("{0}CUST_PAYMENT_INFO: Customer ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM CUST_PAYMENT_INFO WHERE CUSTOMER = '{0}' AND REC = '5';",V.Local.sCust,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}CUST_PAYMENT_INFO: Customer ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}CUST_PAYMENT_INFO: Customer ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'CUST_FORM_INFO
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM CUST_FORM_INFO WHERE CUSTOMER = '{0}' AND REC = '6';",V.Local.sCust,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}CUST_FORM_INFO: Customer ({1}) was not found in {2}.{3}{3}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}CUST_FORM_INFO: Customer ({1}) already exist in {2}.{3}{3}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.CUST_FORM_INFO SELECT * FROM GLOBAL{1}.CUST_FORM_INFO WHERE CUSTOMER = '{2}' AND REC = '6';",V.Global.sTo,V.Global.sFrom,V.Local.sCust,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optCustMove.Value)
+'				F.Intrinsic.String.Build("{0}CUST_FORM_INFO: Customer ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM CUST_FORM_INFO WHERE CUSTOMER = '{0}' AND REC = '6';",V.Local.sCust,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}CUST_FORM_INFO: Customer ({1}) was Removed From {2}.{3}{3}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}CUST_FORM_INFO: Customer ({1}) was Copied From {2} To {3}.{4}{4}",V.Global.sLog,V.Local.sCust.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.MoveCopyCust.End
+
+Program.Sub.MoveCopyVend.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	V.Local.sVend.Declare
+	V.Local.sSQL.Declare
+	V.Local.sSQLInsert.Declare
+	V.Local.sSQLDelete.Declare
+	V.Local.sRet.Declare
+	V.Local.iFrom.Declare
+	V.Local.iTo.Declare
+
+	V.Local.sVend.Set(V.Screen.frmTrans!txtVend.Text)
+
+	'VENDOR_MASTER
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM VENDOR_MASTER WHERE VENDOR = '{0}' AND REC = '1';",V.Local.sVend,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}VENDOR_MASTER: Vendor ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sVend.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}VENDOR_MASTER: Vendor ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sVend.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.VENDOR_MASTER SELECT * FROM GLOBAL{1}.VENDOR_MASTER WHERE VENDOR = '{2}' AND REC = '1';",V.Global.sTo,V.Global.sFrom,V.Local.sVend,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optVendMove.Value)
+'				F.Intrinsic.String.Build("{0}VENDOR_MASTER: Vendor ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sVend.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM VENDOR_MASTER WHERE VENDOR = '{0}' AND REC = '1';",V.Local.sVend,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}VENDOR_MASTER: Vendor ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sVend.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}VENDOR_MASTER: Vendor ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sVend.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'VENDOR_PAY_TO
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM VENDOR_PAY_TO WHERE VENDOR = '{0}' AND REC = '2';",V.Local.sVend,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}VENDOR_PAY_TO: Vendor ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sVend.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}VENDOR_PAY_TO: Vendor ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sVend.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.VENDOR_PAY_TO SELECT * FROM GLOBAL{1}.VENDOR_PAY_TO WHERE VENDOR = '{2}' AND REC = '2';",V.Global.sTo,V.Global.sFrom,V.Local.sVend,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optVendMove.Value)
+'				F.Intrinsic.String.Build("{0}VENDOR_PAY_TO: Vendor ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sVend.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM VENDOR_PAY_TO WHERE VENDOR = '{0}' AND REC = '2';",V.Local.sVend,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}VENDOR_PAY_TO: Vendor ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sVend.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}VENDOR_PAY_TO: Vendor ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sVend.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'VENDOR_ADDL
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM VENDOR_ADDL WHERE VENDOR = '{0}' AND REC = '3';",V.Local.sVend,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}VENDOR_ADDL: Vendor ({1}) was not found in {2}.{3}",V.Global.sLog,V.Local.sVend.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}VENDOR_ADDL: Vendor ({1}) already exist in {2}.{3}",V.Global.sLog,V.Local.sVend.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.VENDOR_ADDL SELECT * FROM GLOBAL{1}.VENDOR_ADDL WHERE VENDOR = '{2}' AND REC = '3';",V.Global.sTo,V.Global.sFrom,V.Local.sVend,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optVendMove.Value)
+'				F.Intrinsic.String.Build("{0}VENDOR_ADDL: Vendor ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sVend.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM VENDOR_ADDL WHERE VENDOR = '{0}' AND REC = '3';",V.Local.sVend,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}VENDOR_ADDL: Vendor ({1}) was Removed From {2}.{3}",V.Global.sLog,V.Local.sVend.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}VENDOR_ADDL: Vendor ({1}) was Copied From {2} To {3}.{4}",V.Global.sLog,V.Local.sVend.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	'VENDOR_INTL
+	V.Local.iFrom.Set(0)
+	V.Local.iTo.Set(0)
+	F.Intrinsic.String.Build("SELECT * FROM VENDOR_INTL WHERE VENDOR = '{0}' AND REC = '4';",V.Local.sVend,V.Local.sSQL)
+	F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+	F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+		F.ODBC.Connection!conx.ExecuteAndReturn(V.Local.sSQL,V.Local.sRet)
+		F.Intrinsic.Control.If(V.Local.sRet,<>,"")
+			F.Intrinsic.Math.Add(V.Local.iTo,1,V.Local.iTo)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Math.Add(V.Local.iFrom,1,V.Local.iFrom)
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.If(V.Local.iFrom,>,0)
+		F.Intrinsic.String.Build("{0}VENDOR_INTL: Vendor ({1}) was not found in {2}.{3}{3}",V.Global.sLog,V.Local.sVend.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+	F.Intrinsic.Control.Else
+		F.Intrinsic.Control.If(V.Local.iTo,>,0)
+			F.Intrinsic.String.Build("{0}VENDOR_INTL: Vendor ({1}) already exist in {2}.{3}{3}",V.Global.sLog,V.Local.sVend.Trim,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+		F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("INSERT INTO GLOBAL{0}.VENDOR_INTL SELECT * FROM GLOBAL{1}.VENDOR_INTL WHERE VENDOR = '{2}' AND REC = '4';",V.Global.sTo,V.Global.sFrom,V.Local.sVend,V.Local.sSQLInsert)
+			F.ODBC.Connection!con.Execute(V.Local.sSQLInsert)
+'			F.Intrinsic.Control.If(V.Screen.frmTrans!optVendMove.Value)
+'				F.Intrinsic.String.Build("{0}VENDOR_INTL: Vendor ({1}) was Moved From {2} To {3}.{4}",V.Global.sLog,V.Local.sVend.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'				F.Intrinsic.String.Build("DELETE FROM VENDOR_INTL WHERE VENDOR = '{0}' AND REC = '4';",V.Local.sVend,V.Local.sSQLDelete)
+'				F.ODBC.Connection!con.Execute(V.Local.sSQLDelete)
+'				F.Intrinsic.String.Build("{0}VENDOR_INTL: Vendor ({1}) was Removed From {2}.{3}{3}",V.Global.sLog,V.Local.sVend.Trim,V.Global.sFrom,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.Else
+			F.Intrinsic.String.Build("{0}VENDOR_INTL: Vendor ({1}) was Copied From {2} To {3}.{4}{4}",V.Global.sLog,V.Local.sVend.Trim,V.Global.sFrom,V.Global.sTo,V.Ambient.NewLine,V.Global.sLog)
+'			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.MoveCopyVend.End
+
+Program.Sub.DisableScreen.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	Gui.frmTrans.ddlddlTo.Enabled(False)
+	Gui.frmTrans.frameInv.Enabled(False)
+	Gui.frmTrans.frameRtr.Enabled(False)
+	Gui.frmTrans.frameBOM.Enabled(False)
+	Gui.frmTrans.frameWO.Enabled(False)
+	Gui.frmTrans.frameSO.Enabled(False)
+	Gui.frmTrans.framePO.Enabled(False)
+	Gui.frmTrans.frameCust.Enabled(False)
+	Gui.frmTrans.frameVend.Enabled(False)
+	Gui.frmTrans.cmdRun.Enabled(False)
+	Gui.frmTrans.cmdClear.Enabled(False)
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.DisableScreen.End
+
+Program.Sub.EnableScreen.Start
+	F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+
+	Gui.frmTrans.ddlddlTo.Enabled(True)
+	Gui.frmTrans.frameInv.Enabled(True)
+	Gui.frmTrans.frameRtr.Enabled(True)
+	Gui.frmTrans.frameBOM.Enabled(True)
+	Gui.frmTrans.frameWO.Enabled(True)
+	Gui.frmTrans.frameSO.Enabled(True)
+	Gui.frmTrans.framePO.Enabled(True)
+	Gui.frmTrans.frameCust.Enabled(True)
+	Gui.frmTrans.frameVend.Enabled(True)
+	Gui.frmTrans.cmdRun.Enabled(True)
+	Gui.frmTrans.cmdClear.Enabled(True)
+
+	F.Intrinsic.Control.Catch
+		F.Intrinsic.String.Build("Project: GAB_4350_Move_Copy_Data_Across_Comp.g2u{0}{0}Subroutine: {1}{0}Error Occurred {2} with description {3}.",V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Local.sError)
+		F.Intrinsic.UI.Msgbox(V.Local.sError)
+		F.Intrinsic.Control.End 
+	F.Intrinsic.Control.EndTry
+Program.Sub.EnableScreen.End
+
+Program.Sub.SetCopy.Start
+	'Added by FEQ. Selects all Copy buttons as precaution
+	Gui.frmTrans.optBOMCopy.Value("True")
+	Gui.frmTrans.optCustCopy.Value("True")
+	Gui.frmTrans.optInvCopy.Value("True")
+	Gui.frmTrans.optPOCopy.Value("True")
+	Gui.frmTrans.optRtrCopy.Value("True")
+	Gui.frmTrans.optSOCopy.Value("True")
+	Gui.frmTrans.optVendCopy.Value("True")
+	Gui.frmTrans.optWOCopy.Value("True")
+
+Program.Sub.SetCopy.End
+
+Program.Sub.Comments.Start
+${$0$}$GAB_4350_Transfer_Recs_Cross_Comp$}$AGV$}$12/30/2016 7:43:31 AM$}$False
+Program.Sub.Comments.End
